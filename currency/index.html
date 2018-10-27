@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <script src="index.js"></script>
+    <title>Currency</title>
+</head>
+<body>
+<div>
+    <div id="option_div">
+        <div class="select">
+        <h1>Select currency to exhange: </h1>
+        <select id="sel">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="RUB">RUB</option>
+            <option value="GBR">GBR</option>
+        </select>
+    </div>
+    </div>
+
+    <div class="currency" id="ethereum">
+        <h2>Ethereum</h2>
+        <div id="eth_img"></div>
+        <table>
+        <tr><td>Price: </td> <td><div id="EthPrise"></div></td></tr>
+            <tr><td>Persent change</td> <td><div class="radio">
+                <input type="checkbox" id="eth" style="display:none" value="eth"/>
+                <label for="eth" class="toggle"><span></span></label>
+            </div></tr>
+            <tr><td>Hour change</td> <td><div id="EthHour"></div></td></tr>
+            <tr><td>Day change</td> <td><div id="EthDay"></div></td></tr>
+            <tr><td>Week change</td> <td><div id="EthWeek"></div></td></tr>
+            <tr><td>Month change</td> <td><div id="EthMonth"></div></td></tr>
+        </table>
+    </div>
+    <div class="currency" id="litecoin">
+        <h2>Litecoin</h2>
+        <div id="lit_img"></div>
+        <table>
+            <tr><td>Price: </td> <td><div id="LitPrise"></div></td></tr>
+            <tr><td>Persent change</td> <td><div class="radio">
+                <input type="checkbox" id="lit" style="display:none" value="lit"/>
+                <label for="lit" class="toggle"><span></span></label>
+            </div></tr>
+            <tr><td>Hour change</td> <td><div id="LitHour"></div></td></tr>
+            <tr><td>Day change</td> <td><div id="LitDay"></div></td></tr>
+            <tr><td>Week change</td> <td><div id="LitWeek"></div></td></tr>
+            <tr><td>Month change</td> <td><div id="LitMonth"></div></td></tr>
+        </table>
+    </div>
+
+    <div class="currency" id="bitcoin">
+        <h2>Bitcoin</h2>
+        <div id="bit_img"></div>
+        <table>
+            <tr><td>Price: </td> <td><div id="BitPrise"></div></td></tr>
+            <tr><td>Persent change</td> <td><div class="radio">
+                <input type="checkbox" id="bit" style="display:none" value="bit"/>
+                <label for="bit" class="toggle"><span></span></label>
+            </div></tr>
+            <tr><td>Hour change</td> <td><div id="BitHour"></div></td></tr>
+            <tr><td>Day change</td> <td><div id="BitDay"></div></td></tr>
+            <tr><td>Week change</td> <td><div id="BitWeek"></div></td></tr>
+            <tr><td>Month change</td> <td><div id="BitMonth"></div></td></tr>
+        </table>
+    </div>
+
+</div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+</body>
+</html>
