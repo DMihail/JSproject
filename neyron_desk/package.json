@@ -1,0 +1,16 @@
+{
+  "name": "untitled",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . myApp --platform=win32 --arch=x64 --version=0.33.3 --app-version=0.1.0 --out=dist --ignore=dist --prune"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "brain.js": "^1.6.0",
+    "electron": "^3.0.10"
+  }
+}

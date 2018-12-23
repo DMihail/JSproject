@@ -1,0 +1,42 @@
+body {
+    background-color: #333;
+}
+
+#can {
+    position: absolute;
+    top: 0;bottom: 0;left: 20%;
+    margin: auto;
+    background-color: white;
+}
+
+#M {
+    position: absolute;
+    left: 70%;
+    top: 15%;
+}
+
+#V {
+    position: absolute;
+    left: 75%;
+    top: 15%;
+}
+
+#img {
+    position: absolute;
+    left: 70%;
+    top: 30%;
+    width: 200px;
+    height: 200px;
+    background: azure;
+}
+#output {
+    position: absolute;
+    left: 75%;
+    top: 20%;
+}
+
+#clean{
+    position: absolute;
+    left: 85%;
+    top: 15%;
+}
