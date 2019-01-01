@@ -7,21 +7,13 @@ const  postSchema = new  Schema({
         type: String,
         required: true
     },
-    text:{
-        type: String,
+    realisation:{
+        type:Boolean,
         required: true
     },
-    startDate:{
-        type: Date,
-        default: Date.now
-    },
-    plan:{
-        type: Date,
+    data:{
+        type:Date,
         required: true
-    },
-    end:{
-        type: Date,
-        default: Date.now
     }
     });
 
