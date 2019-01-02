@@ -1,6 +1,7 @@
 const  express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const  notesRouter = require('./routes/notes')
 const  keys = require('./keys');
 const app = express();
 mongoose.connect(keys.mongoUri)
@@ -10,6 +11,7 @@ mongoose.connect(keys.mongoUri)
     .catch(err => console.error(err));
 const port = process.env.PORT || 5000;
 const UsersPath = path.join(__dirname, 'users');
+app.use('/api/notes', notesRouter);
 app.use(express.static(UsersPath));
 
 
