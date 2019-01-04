@@ -1,7 +1,7 @@
 const  express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
-const  notesRouter = require('./routes/notes')
+const  notesRouter = require('./routes/notes');
 const  keys = require('./keys');
 const app = express();
 mongoose.connect(keys.mongoUri)

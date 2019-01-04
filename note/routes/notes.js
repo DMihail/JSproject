@@ -1,28 +1,32 @@
 const express = require('express');
 const router = express.Router();
-const  Post = require('.,/models/note');
+const  Note = require('../models/note');
 
 
 router.get('/', async (req, res) =>{
-    const notes = await  Post.find({});
-    res.status(200).join(notes);
+    const notes = await Note.find({});
+    res.status(200).json(notes);
 });
 
 router.post('/', async (req, res) =>{
 
    const notesdata = {
-       title: req.body.title,
+       task: req.body.task,
+       podtask: req.body.podtask,
        realisation: req.body.text,
        data: req.body.text
    };
 
-   const  note = new Post(notesdata);
+   const  note = new Note(notesdata);
    await  note.save();
     res.status(201).join(note);
 });
 
-router.delete('/', (req, res) =>{
-
+router.delete('/:id', async (req, res) =>{
+   await Note.remove({_id: req.params.id});
+    res.status(200).join({
+        message: 'Удалeно'
+    })
 });
 
 module.exports = router;

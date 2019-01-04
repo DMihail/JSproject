@@ -3,7 +3,11 @@ const  mongoose = require('mongoose');
 const  Schema = mongoose.Schema;
 
 const  postSchema = new  Schema({
-    title:{
+    task:{
+        type: String,
+        required: true
+    },
+    podtask:{
         type: String,
         required: true
     },
