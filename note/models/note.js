@@ -7,13 +7,13 @@ const  postSchema = new  Schema({
         type: String,
         required: true
     },
-    podtask:{
-        type: String,
-        required: true
-    },
+    // podtask:{
+    //     type: String,
+    //     required: true
+    // },
     realisation:{
         type:Boolean,
-        required: true
+        required: false
     },
     data:{
         type:Date,

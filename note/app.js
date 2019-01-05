@@ -1,9 +1,11 @@
 const  express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const bodyparser = require('body-parser');
 const  notesRouter = require('./routes/notes');
 const  keys = require('./keys');
 const app = express();
+app.use(bodyparser.json());
 mongoose.connect(keys.mongoUri)
     .then(() => {
         console.log('connect');
