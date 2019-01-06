@@ -1,4 +1,4 @@
-const  task = post => {
+const  task = note => {
     return `
             <div class="card z-depth-4">
                 <div class="card-content">
