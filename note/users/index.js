@@ -4,10 +4,10 @@ const  task = post => {
                 <div class="card-content">
                     <span class="card-title">${post.task}</span>
                   <!--  <p>${post.podtask}</p>-->
-            <small>${post.data}</small>
+            <small>${new Date(post.data).toLocaleDateString()}</small>
                 </div>
                 <div class="card-action">
-                    <button class="btn btn-small red">
+                    <button class="btn btn-small red js-remove" data-id="${post._id}">
                         <i class="material-icons">delete</i>
                     </button>
 
@@ -33,6 +33,12 @@ class Api {
             }
         }).then(res => res.json())
     }
+
+    static remove(id){
+        return fetch(`${URL}/${id}`, {
+            method: 'delete'
+        }).then(res => res.json())
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () =>{
@@ -41,8 +47,21 @@ document.addEventListener('DOMContentLoaded', () =>{
         renderNotes(notes);
     });
     modal = M.Modal.init(document.querySelector('.modal'));
-    document.querySelector('#create').addEventListener('click', newNote)
+    document.querySelector('#create').addEventListener('click', newNote);
+    document.querySelector('#note').addEventListener('click', deleteNote)
 });
+
+function deleteNote(event) {
+if (event.target.classList.contains('js-remove')) {
+const id = event.target.getAttribute('data-id');
+
+Api.remove(id).then(() => {
+    const  index = notes.findIndex(note => note._id === id);
+    notes.splice(index, 1);
+    renderNotes(notes);
+})
+}
+}
 
 function newNote() {
     const  $task = document.querySelector('#task');
