@@ -2,11 +2,11 @@
   "name": "note",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "electron.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "xo && electron .",
     "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "xo"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,18 @@
     "mongoose": "^5.4.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "electron": "^4.0.1",
+    "nodemon": "^1.18.9",
+    "xo": "^0.23.0"
+  },
+  "xo": {
+    "space": 2,
+    "envs": [
+      "node",
+      "browser"
+    ],
+    "ignores": [
+      "dist/**"
+    ]
   }
 }
