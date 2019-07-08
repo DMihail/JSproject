@@ -6,10 +6,13 @@ var jsonParser = bodyParser.json();
 var fs = require('fs');
 app.use(express.static('public'));
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-app.get('/authorization', function (req, res) {
+app.get('/singin', function (req, res) {
     res.sendFile(__dirname + "/public/SingIn.html");
 });
-app.post('/authorization', jsonParser, function (req, res) {
+app.get('/singup', function (req, res) {
+    res.sendFile(__dirname + "/public/SingUp.html");
+});
+app.post('/singin', jsonParser, function (req, res) {
     console.log(req.body);
     let base = new UserBase();
     if (base.FindUser(req.body.mail, req.body.password)){
@@ -21,7 +24,7 @@ app.post('/authorization', jsonParser, function (req, res) {
 
 });
 
-app.post('/singin', jsonParser, function (req, res) {
+app.post('/singup', jsonParser, function (req, res) {
     console.log(req.body);
     let base = new UserBase();
     if (base.FindUser(req.body.mail, req.body.password)){
