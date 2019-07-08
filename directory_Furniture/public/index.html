@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Furniture</title>
-    <script src="autification.js" defer></script>
+    <title>Authorization</title>
+    <script src="authorization.js" defer></script>
 </head>
 <body>
 <form>
@@ -17,27 +17,9 @@
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 </div>
+    <p><a href="/SingIn">SingIn</a></p>
 <button type="button" class="btn btn-primary" onclick={Send()}>Submit</button>
 </form>
-<script>
-    function Send() {
-        const  User = {
-            mail: document.getElementById('exampleInputEmail1').value,
-            data: document.getElementById('exampleInputPassword1').value
-        };
-        console.log(User)
-        let URL = '/';
-        return fetch(URL, {
-            method: 'post',
-            body: JSON.stringify(User),
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }).then(res => res.json())
-    }
-
-</script>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
