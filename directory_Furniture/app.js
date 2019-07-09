@@ -4,6 +4,9 @@ const UserBase = require('./server/data/ParseBase');
 const app = express();
 var jsonParser = bodyParser.json();
 var session = require('express-session');
+const list = require('./server/data/list');
+
+
 
 app.use(express.static('public/authorization'));
 app.use(express.static('server/data/list.json'));
@@ -32,20 +35,35 @@ app.get('/list', function (req, res) {
     res.sendFile(__dirname + "/public/furnitureList/html/List.html");
 });
 app.get('/getlist', function (req, res) {
-    const list = require('./server/data/list');
-            res.status(201).json(list);
+    let ul = {};
+    for (let key in  list){
+        console.log(list[key]['id']);
+         ul[key] = {
+              "id" : list[key]['id'],
+              "img" : list[key]['view'],
+              "name" : list[key]['name']
+          }
+    }
+   // console.log(ul);
+           res.status(201).json(ul);
 });
 app.get('/list/:id', function (req, res) {
     console.log('/id/'+req.params.id);
-    res.sendStatus(200);
-    app.get('/id/'+req.params.id, function (req, res) {
-        app.use(express.static('public/furnitureData'));
-        res.sendFile(__dirname + "/public/furnitureData/html/Data.html");
-        //res.redirect('/id/TATI');
-    });
-
-
+    for (let key in  list){
+       if (list[key]['id'] === req.params.id)  {
+           res.sendStatus(200);
+           app.get('/id/'+req.params.id, function (req, res) {
+             //  console.log(list[key]);
+               app.use(express.static('public/furnitureData'));
+               res.sendFile(__dirname + "/public/furnitureData/html/Data.html");
+             //  res.status(200).json(list[key]);
+           });
+       }else {
+           res.sendStatus(500);
+       }
+    }
 });
+
 
 app.post('/out', function (req, res) {
    // req.session.destroy();

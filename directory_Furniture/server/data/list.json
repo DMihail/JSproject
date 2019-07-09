@@ -1,86 +1,191 @@
 [
   {
-    "name" : "TATI",
-    "img": "https://blanche.ua/data/catalog/239fc2359edf760cf8343fd0068d4798.jpg"
-  },
-  {
-    "name" : "MOKO",
-    "img": "https://blanche.ua/data/catalog/690456b4a5524e5e318e0f9667ff420d.jpg"
-  },
-  {
-    "name" : "ALFINOSA",
-    "img": "https://blanche.ua/data/catalog/1af332758b9a5fc61e125b1d871fc570.jpg"
-  },
-  {
-    "name" : "ILARIA",
-    "img": "https://blanche.ua/data/catalog/8a553213d7b29a5c16a89aaf52a82bdb.jpg"
-  },
-  {
-    "name" : "KARRERA",
-    "img": "https://blanche.ua/data/catalog/af18998fb9fba29e844682b8d1b2da5b.jpg"
-  },
-  {
-    "name" : "PARMA",
-    "img": "https://blanche.ua/data/catalog/0932da2b28ab386c099109e3e7694fed.jpg"
-  },
-  {
-    "name" : "MELIA",
-    "img": "https://blanche.ua/data/catalog/a44b42b37b2c4177e8bd23f9a8badf8e.jpg"
-  },
-  {
-    "name" : "IPSONI",
-    "img": "https://blanche.ua/data/catalog/9eb2bd64e42bec774e948020177765c0.jpg"
-  },
-  {
-    "name" : "MILTON",
-    "img": "https://blanche.ua/data/catalog/cdba522798cb3249d9c674c05d747158.jpg"
-  },
-  {
-    "name" : "LAVAL",
-    "img": "https://blanche.ua/data/catalog/36a699def4a6851f100a68fd4995cddc.jpg"
-  },
-  {
-    "name" : "VOGUE",
-    "img": "https://blanche.ua/data/catalog/503fb3548d56d63bb721ea6ce372f2c8.jpg"
-  },
-  {
-    "name" : "LIMURA",
-    "img": "https://blanche.ua/data/catalog/52ab88104128c02d745ac8a020a1a3cc.jpg"
-  },
-  {
-    "name" : "ETERNA",
-    "img": "https://blanche.ua/data/catalog/d73db22b22dd723e9c46ec778d27d17a.jpg"
-  },
-  {
-    "name" : "TOO NIGHT",
-    "img": "https://blanche.ua/data/catalog/b04519fa5bed94443b3d7b3eabaf0be1.jpg"
-  },
-  {
-    "name" : "DIONIGI",
-    "img": "https://blanche.ua/data/catalog/7d2f686999d6b256a85456e064e23175.jpg"
-  },
-    {
-      "name" : "KATARINA",
-      "img": "https://blanche.ua/data/catalog/573df04676158ab877dc2e025e5a79d2.jpg"
-    },
-    {
-      "name" : "ALFINOSA",
-      "img": "https://blanche.ua/data/catalog/4bf9129c008127282a5e2eecd36aca95.jpg"
-    },
-    {
-      "name" : "CLIFF",
-      "img": "https://blanche.ua/data/catalog/f26f81acca462548eb560b374b7beb09.jpg"
-    },
-    {
-      "name" : "TUTTO",
-      "img": "https://blanche.ua/data/catalog/20cca437c5521acbb36ebfaf42b7a7d6.jpg"
-    },
-    {
-      "name" : "APPIANI",
-      "img": "https://blanche.ua/data/catalog/3119641f000911ea65d1a02fb89b20b6.jpg"
-    },
-    {
-      "name" : "ERMES",
-      "img": "https://blanche.ua/data/catalog/8fc95acfee50b984bd001dedddcfbddc.jpg"
+    "id": "0001",
+    "name" : "Компьютерный стол MaximuM Maxi Komp 803 Black",
+    "view": "https://i2.rozetka.ua/goods/5681/comptable_maxi_komp_803_black_images_5681478.jpg",
+    "img": ["https://www.google.com/imgres?imgurl=https%3A%2F%2Fi1.rozetka.ua%2Fgoods%2F23217%2Fcomptable_maxi_komp_1350_images_23217030.jpg&imgrefurl=https%3A%2F%2Frozetka.com.ua%2Fcomptable_maxi_komp_1350%2Fp219389%2F&docid=Pejs6z1SFjT7ZM&tbnid=C5Jf8ozaPwXmvM%3A&vet=10ahUKEwiB3Jjrw6jjAhUFlIsKHfTXBrAQMwhBKAAwAA..i&w=585&h=348&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20MaximuM%20&ved=0ahUKEwiB3Jjrw6jjAhUFlIsKHfTXBrAQMwhBKAAwAA&iact=mrc&uact=8",
+    "https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.cezar.ua%2Flocal%2Fgoodimg%2Fk804b.jpg&imgrefurl=http%3A%2F%2Fwww.cezar.ua%2Fproduct%2Fmaximum-maxi-komp-804-chernyy&docid=2yOZT78IlV5pOM&tbnid=mwQIyW-uQ2C-AM%3A&vet=10ahUKEwiB3Jjrw6jjAhUFlIsKHfTXBrAQMwhJKAgwCA..i&w=688&h=723&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20MaximuM%20&ved=0ahUKEwiB3Jjrw6jjAhUFlIsKHfTXBrAQMwhJKAgwCA&iact=mrc&uact=8",
+    "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.ua.prom.st%2F1153350802_w640_h640_stol-kompyuternyj-maxi.jpg&imgrefurl=https%3A%2F%2Fprom.ua%2Fp193542177-stol-kompyuternyj-maxi.html&docid=mhnOmLPrr_lJkM&tbnid=PMOdT7UisHKl3M%3A&vet=10ahUKEwiB3Jjrw6jjAhUFlIsKHfTXBrAQMwhUKBMwEw..i&w=442&h=402&itg=1&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20MaximuM%20&ved=0ahUKEwiB3Jjrw6jjAhUFlIsKHfTXBrAQMwhUKBMwEw&iact=mrc&uact=8"],
+    "specifications": {
+      "type": "Компьютерные столы",
+      "material" : "Стекло",
+      "width" : "800 мм",
+      "Thickness" : "10 мм",
+      "height" : "730 мм",
+      "color" : "Black"
     }
+  },
+  {
+    "id": "0002",
+    "name": "Компьютерный стол GamePro Ultimate Black",
+    "view": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi1.rozetka.ua%2Fgoods%2F7650183%2Fgamepro_kw_t01_images_7650183210.jpg&imgrefurl=https%3A%2F%2Frozetka.com.ua%2Fgamepro_kw_t01%2Fp55523442%2F&docid=p_CzTi5FEwAo-M&tbnid=uzi21upYVLuyDM%3A&vet=10ahUKEwjXxY3ixqjjAhWvwqYKHRAkBV8QMwg5KAAwAA..i&w=3167&h=2686&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20GamePro%20Ultimate%20Black&ved=0ahUKEwjXxY3ixqjjAhWvwqYKHRAkBV8QMwg5KAAwAA&iact=mrc&uact=8",
+    "img": [
+      "https://i1.rozetka.ua/goods/7650024/gamepro_kw_t01s_images_7650024594.jpg",
+      "https://i2.rozetka.ua/goods/7650029/gamepro_kw_t01s_images_7650029538.jpg",
+      "https://i1.rozetka.ua/goods/7650095/gamepro_kw_t01s_images_7650095604.jpg"
+    ],
+    "specifications": {
+      "type": "Геймерские столы",
+      "material": "Металл",
+      "width": "1200 мм",
+      "Thickness": "10 мм",
+      "height": "750 мм",
+      "color": "Black"
+    }
+  },
+  {
+    "id": "0003",
+    "name" : "Регулируемый стол Barsky StandUp Black",
+    "view": "https://i1.rozetka.ua/goods/12269228/barsky_bsu_m_04_images_12269228432.jpg",
+    "img": ["https://i1.rozetka.ua/goods/12269228/barsky_bsu_m_04_images_12269228432.jpg",
+      "https://i2.rozetka.ua/goods/12269228/barsky_bsu_m_04_images_12269228606.jpg",
+      "https://i1.rozetka.ua/goods/12269228/barsky_bsu_m_04_images_12269228996.jpg"],
+    "specifications": {
+      "type": "Геймерские столы",
+      "material" : "МДФ",
+      "width" : "1500 мм",
+      "Thickness" : "10 мм",
+      "height" : "710 мм",
+      "color" : "Black"
+    }
+  },
+  {
+    "id": "0004",
+    "name" : "Письменный стол Loft design L-3p Венге Корсика",
+    "view": "https://i2.rozetka.ua/goods/12439767/20859049_images_12439767008.jpg",
+    "img": ["https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiG4LKwyKjjAhWJwcQBHdMSA6cQjRx6BAgBEAU&url=https%3A%2F%2Fbesplatka.ua%2Fobyavlenie%2Fpismennyi-stol-loft-design-l-3p-venge-korsika-1370h750h700-c85df3&psig=AOvVaw1UOynm6hfsv6VgpGODXmU-&ust=1562786728192490",
+      "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwim3aC5yKjjAhUmyaYKHSjqDtQQjRx6BAgBEAU&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Fprom.ua%252Fp598379757-pismennyj-stol-loft.html%26psig%3DAOvVaw1UOynm6hfsv6VgpGODXmU-%26ust%3D1562786728192490&psig=AOvVaw1UOynm6hfsv6VgpGODXmU-&ust=1562786728192490",
+      "https://www.google.com/imgres?imgurl=https%3A%2F%2Fbesplatka.ua%2Faws%2F36%2F06%2F99%2F25%2Fpismennyi-stol-loft-design-l-3p-venge-korsika-1370h750h700-photo-bc45.jpg&imgrefurl=https%3A%2F%2Fbesplatka.ua%2Fobyavlenie%2Fpismennyi-stol-loft-design-l-3p-venge-korsika-1370h750h700-c85df3&docid=1f_TixxSTbxWmM&tbnid=1cnGhbLrF9G3dM%3A&vet=10ahUKEwjC5LOvyKjjAhXpl4sKHdn3CMAQMwhiKBswGw..i&w=614&h=461&bih=722&biw=1536&q=%D0%9F%D0%B8%D1%81%D1%8C%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20Loft%20design%20L-3p%20%D0%92%D0%B5%D0%BD%D0%B3%D0%B5%20%D0%9A%D0%BE%D1%80%D1%81%D0%B8%D0%BA%D0%B0&ved=0ahUKEwjC5LOvyKjjAhXpl4sKHdn3CMAQMwhiKBswGw&iact=mrc&uact=8"],
+    "specifications": {
+      "type": "Компьютерные столы",
+      "material" : "Металл + ЛДСП",
+      "width" : "1300 мм",
+      "Thickness" : "10 мм",
+      "height" : "750 мм",
+      "color" : "Венге"
+    }
+  },
+  {
+    "id": "0005",
+    "name" : "Компьютерный стол Roko БЮ103 Яблоня Локарно",
+    "view": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi2.rozetka.ua%2Fgoods%2F8519552%2Froko_10000081150_images_8519552473.jpg&imgrefurl=https%3A%2F%2Frozetka.com.ua%2Froko_10000081150%2Fp59830230%2Fphoto%2F&docid=PgNtKvpDbhDGeM&tbnid=CEbu7vrUV95KoM%3A&vet=10ahUKEwj2rPKOzKjjAhWm1aYKHdmPAVcQMwhKKAcwBw..i&w=720&h=461&itg=1&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20Roko%20%D0%91%D0%AE103%20%D0%AF%D0%B1%D0%BB%D0%BE%D0%BD%D1%8F%20&ved=0ahUKEwj2rPKOzKjjAhWm1aYKHdmPAVcQMwhKKAcwBw&iact=mrc&uact=8",
+    "img":["https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.ua.prom.st%2F1661763047_w640_h640_stol-pismennyj-byu.jpg&imgrefurl=https%3A%2F%2Fprom.ua%2Fp251521335-stol-pismennyj-byu.html&docid=UeUybXC6S2dZVM&tbnid=a8TM1KGuTXNKzM%3A&vet=10ahUKEwj2rPKOzKjjAhWm1aYKHdmPAVcQMwhSKA8wDw..i&w=721&h=569&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20Roko%20%D0%91%D0%AE103%20%D0%AF%D0%B1%D0%BB%D0%BE%D0%BD%D1%8F%20&ved=0ahUKEwj2rPKOzKjjAhWm1aYKHdmPAVcQMwhSKA8wDw&iact=mrc&uact=8",
+      "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi2.rozetka.ua%2Fgoods%2F8519552%2Froko_10000081150_images_8519552473.jpg&imgrefurl=https%3A%2F%2Frozetka.com.ua%2Froko_10000081150%2Fp59830230%2Fphoto%2F&docid=PgNtKvpDbhDGeM&tbnid=CEbu7vrUV95KoM%3A&vet=10ahUKEwj2rPKOzKjjAhWm1aYKHdmPAVcQMwhKKAcwBw..i&w=720&h=461&itg=1&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20Roko%20%D0%91%D0%AE103%20%D0%AF%D0%B1%D0%BB%D0%BE%D0%BD%D1%8F%20&ved=0ahUKEwj2rPKOzKjjAhWm1aYKHdmPAVcQMwhKKAcwBw&iact=mrc&uact=8",
+      "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi2.rozetka.ua%2Fgoods%2F8519319%2Froko_10000081148_images_8519319324.jpg&imgrefurl=https%3A%2F%2Frozetka.com.ua%2Froko_10000081148%2Fp59829411%2F&docid=oixU-wRJQjSxqM&tbnid=P9KUjawFrRirQM%3A&vet=10ahUKEwj2rPKOzKjjAhWm1aYKHdmPAVcQMwhPKAwwDA..i&w=400&h=346&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20Roko%20%D0%91%D0%AE103%20%D0%AF%D0%B1%D0%BB%D0%BE%D0%BD%D1%8F%20&ved=0ahUKEwj2rPKOzKjjAhWm1aYKHdmPAVcQMwhPKAwwDA&iact=mrc&uact=8"
+    ],
+    "specifications": {
+      "type": "Компьютерные столы",
+      "material" : "ЛДСП",
+      "width" : "1300 мм",
+      "Thickness" : "16 мм",
+      "height" : "750 мм",
+      "color" : "Яблоня Локарно"
+    }
+  },
+  {
+    "id": "0006",
+    "name" : "Письменный стол Loft design L-27 Дуб Борас",
+    "view": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi2.rozetka.ua%2Fgoods%2F8519552%2Froko_10000081150_images_8519552473.jpg&imgrefurl=https%3A%2F%2Frozetka.com.ua%2Froko_10000081150%2Fp59830230%2Fphoto%2F&docid=PgNtKvpDbhDGeM&tbnid=CEbu7vrUV95KoM%3A&vet=10ahUKEwj2rPKOzKjjAhWm1aYKHdmPAVcQMwhKKAcwBw..i&w=720&h=461&itg=1&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20Roko%20%D0%91%D0%AE103%20%D0%AF%D0%B1%D0%BB%D0%BE%D0%BD%D1%8F%20&ved=0ahUKEwj2rPKOzKjjAhWm1aYKHdmPAVcQMwhKKAcwBw&iact=mrc&uact=8",
+    "img":["https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjmx6GbzajjAhXk0aYKHWdWB5MQjRx6BAgBEAU&url=https%3A%2F%2Frozetka.com.ua%2F12394867%2Fp12394867%2Fcomments%2Fpage%3D2%2F&psig=AOvVaw0qffq48HbR6X3AmInc8Pgw&ust=1562787933725975",
+    "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjKopWvzajjAhWfw8QBHVZ1D74QjRx6BAgBEAU&url=https%3A%2F%2Frozetka.com.ua%2F46501880%2Fp46501880%2Fphoto%2F&psig=AOvVaw0qffq48HbR6X3AmInc8Pgw&ust=1562787933725975",
+    "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiE-e6zzajjAhXvxaYKHefeDAkQjRx6BAgBEAU&url=https%3A%2F%2Frozetka.com.ua%2F12394916%2Fp12394916%2Fphoto%2F&psig=AOvVaw0qffq48HbR6X3AmInc8Pgw&ust=1562787933725975"],
+    "specifications": {
+      "type": "Компьютерные столы",
+      "material" : "Металл + ЛДСП",
+      "width" : "1200 мм",
+      "Thickness" : "16 мм",
+      "height" : "750 мм",
+      "color" : "Дуб Борас"
+    }
+  },
+  {
+    "id": "0007",
+    "name" : "Стол компьютерный Лира Omni Дом Венге темный",
+    "view": "https://i2.rozetka.ua/goods/12460262/58503442_images_12460262432.png",
+    "img":[
+      "https://i2.rozetka.ua/goods/12460262/58503442_images_12460262432.png",
+      "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.ua.prom.st%2F1593929355_w640_h640_stol-kompyuternyj-lira.jpg&imgrefurl=https%3A%2F%2Fkotyara-mebel.com%2Fp491216366-stol-kompyuternyj-lira.html&docid=-yEvYd5wkLabhM&tbnid=Gmv-mZT4C3l6cM%3A&vet=10ahUKEwjwncrpzajjAhUDlYsKHQ7ICYUQMwhEKAMwAw..i&w=640&h=480&bih=722&biw=1536&q=%D0%A1%D1%82%D0%BE%D0%BB%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D0%9B%D0%B8%D1%80%D0%B0%20Omni%20%D0%94%D0%BE%D0%BC%20%D0%92%D0%B5%D0%BD%D0%B3%D0%B5%20%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B9%20125%D1%8560%D1%85125%20%D1%81%D0%BC&ved=0ahUKEwjwncrpzajjAhUDlYsKHQ7ICYUQMwhEKAMwAw&iact=mrc&uact=8",
+      "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.ua.prom.st%2F1593929360_w640_h640_stol-kompyuternyj-lira.jpg&imgrefurl=https%3A%2F%2Fkotyara-mebel.com%2Fp491216366-stol-kompyuternyj-lira.html&docid=-yEvYd5wkLabhM&tbnid=Dq3LcHZECFG6yM%3A&vet=10ahUKEwjwncrpzajjAhUDlYsKHQ7ICYUQMwhOKA0wDQ..i&w=640&h=480&bih=722&biw=1536&q=%D0%A1%D1%82%D0%BE%D0%BB%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D0%9B%D0%B8%D1%80%D0%B0%20Omni%20%D0%94%D0%BE%D0%BC%20%D0%92%D0%B5%D0%BD%D0%B3%D0%B5%20%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B9%20125%D1%8560%D1%85125%20%D1%81%D0%BC&ved=0ahUKEwjwncrpzajjAhUDlYsKHQ7ICYUQMwhOKA0wDQ&iact=mrc&uact=8"
+    ],
+      "specifications": {
+      "type": "Компьютерные столы",
+      "material" : "ЛДСП",
+      "width" : "1200 мм",
+      "Thickness" : "16 мм",
+      "height" : "750 мм",
+      "color" : "Венге"
+    }
+  },
+  {
+    "id": "0008",
+    "name" : "Компьютерный стол Fenster Универ 5 Белый",
+    "view": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiZ6-7MzqjjAhXkxaYKHQYMAtEQjRx6BAgBEAU&url=https%3A%2F%2Fallo.ua%2Fru%2Fstoly-pk%2Ffenster-univer-5-kantri-74x120x60.html&psig=AOvVaw22jxnqfzDadBrk7Yi4NRx-&ust=1562788380689380",
+    "img":[
+      "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiZ6-7MzqjjAhXkxaYKHQYMAtEQjRx6BAgBEAU&url=https%3A%2F%2Fallo.ua%2Fru%2Fstoly-pk%2Ffenster-univer-5-kantri-74x120x60.html&psig=AOvVaw22jxnqfzDadBrk7Yi4NRx-&ust=1562788380689380",
+      "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiO4dPezqjjAhWowqYKHShCBo8QjRx6BAgBEAU&url=https%3A%2F%2Fua.all.biz%2Fkompyuternyj-stol-fenster-univer-2-belyj-74x120x60-g17408010&psig=AOvVaw22jxnqfzDadBrk7Yi4NRx-&ust=1562788380689380",
+      "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjx5K7kzqjjAhWky6YKHYVPBkYQjRx6BAgBEAU&url=https%3A%2F%2Fstol-i-stul.com.ua%2Fstol-fenster-univer-1.html&psig=AOvVaw22jxnqfzDadBrk7Yi4NRx-&ust=1562788380689380"
+      ],
+    "specifications": {
+      "type": "Компьютерные столы",
+      "material" : "Металл + ЛДСП",
+      "width" : "1200 мм",
+      "Thickness" : "16 мм",
+      "height" : "740 мм",
+      "color" : "Белый"
+    }
+  },
+  {
+    "id": "0009",
+    "name" : "Компьютерный стол Star-M Эстет",
+    "view": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmegaroom.com.ua%2Fassets%2Fimages%2Fitems%2F21857%2F0020191001476800469.jpg&imgrefurl=https%3A%2F%2Fmegaroom.com.ua%2Ftovar%2Fkomputernyi-stol-star-m-estet-s13-21857%2F&docid=zX_h9Z0D0RBhmM&tbnid=vgPG1AydEKNl6M%3A&vet=10ahUKEwixnfD5zqjjAhXCwosKHQdYDJoQMwhEKAQwBA..i&w=400&h=299&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20Star-M%20%D0%AD%D1%81%D1%82%D0%B5%D1%82&ved=0ahUKEwixnfD5zqjjAhXCwosKHQdYDJoQMwhEKAQwBA&iact=mrc&uact=8",
+    "img":[
+      "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmegaroom.com.ua%2Fassets%2Fimages%2Fitems%2F21857%2F0020191001476800469.jpg&imgrefurl=https%3A%2F%2Fmegaroom.com.ua%2Ftovar%2Fkomputernyi-stol-star-m-estet-s13-21857%2F&docid=zX_h9Z0D0RBhmM&tbnid=vgPG1AydEKNl6M%3A&vet=10ahUKEwixnfD5zqjjAhXCwosKHQdYDJoQMwhEKAQwBA..i&w=400&h=299&bih=722&biw=1536&q=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB%20Star-M%20%D0%AD%D1%81%D1%82%D0%B5%D1%82&ved=0ahUKEwixnfD5zqjjAhXCwosKHQdYDJoQMwhEKAQwBA&iact=mrc&uact=8",
+      "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwji49iHz6jjAhXOlIsKHRmlD6kQjRx6BAgBEAU&url=https%3A%2F%2F27.ua%2Fshop%2Fstol-kompyuternyy-star-m-estet-c-51-sliva-vengerskaya-belyy.html&psig=AOvVaw3BZ3ZmM2GDlH-bjqzaG-O3&ust=1562788494932352",
+      "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjKuqibz6jjAhVDw4sKHY4fCOUQjRx6BAgBEAU&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252F27.ua%252Fshop%252Fstol-kompyuternyy-vudus-star-m-rubikon-c-35-belyy-.html%26psig%3DAOvVaw3BZ3ZmM2GDlH-bjqzaG-O3%26ust%3D1562788494932352&psig=AOvVaw3BZ3ZmM2GDlH-bjqzaG-O3&ust=1562788494932352"
+    ],
+    "specifications": {
+      "type": "Компьютерные столы",
+      "material" : "ДСП",
+      "width" : "1288 мм",
+      "Thickness" : "18 мм",
+      "height" : "830 мм",
+      "color" : "Дуб Сонома + Белый"
+    }
+  },
+  {
+    "id": "0010",
+    "name" : "Стол компьютерный Myau Менеджер альба",
+    "view": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwizirbWz6jjAhVJGpoKHZ2vDnMQjRx6BAgBEAU&url=https%3A%2F%2Frozetka.com.ua%2F36888616%2Fp36888616%2F&psig=AOvVaw2ZFqCOILJ17Wl7fFPEOtx7&ust=1562788665052021",
+    "img":[
+      "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwizirbWz6jjAhVJGpoKHZ2vDnMQjRx6BAgBEAU&url=https%3A%2F%2Frozetka.com.ua%2F36888616%2Fp36888616%2F&psig=AOvVaw2ZFqCOILJ17Wl7fFPEOtx7&ust=1562788665052021",
+      "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi4yPzqz6jjAhU1xcQBHYCdBN0QjRx6BAgBEAU&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Fnice-price.com.ua%252Fproduct%252Fmyau%252Fstol-kompyuternyy-myau-su-12-alba%26psig%3DAOvVaw2ZFqCOILJ17Wl7fFPEOtx7%26ust%3D1562788665052021&psig=AOvVaw2ZFqCOILJ17Wl7fFPEOtx7&ust=1562788665052021",
+     "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiC4Lvwz6jjAhUK7KYKHdJtAKsQjRx6BAgBEAU&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Frozetka.com.ua%252F36889240%252Fp36889240%252F%26psig%3DAOvVaw2ZFqCOILJ17Wl7fFPEOtx7%26ust%3D1562788665052021&psig=AOvVaw2ZFqCOILJ17Wl7fFPEOtx7&ust=1562788665052021"
+    ],
+    "specifications": {
+      "type": "Компьютерные столы",
+      "material" : "ЛДСП",
+      "width" : "1400 мм",
+      "Thickness" : "16 мм",
+      "height" : "1422 мм",
+      "color" : "Белый"
+    }
+  },
+  {
+    "id": "0011",
+    "name" : "Компьютерный стол Barsky Homework Game Red Led ",
+    "view": "https://i1.rozetka.ua/goods/2453068/barsky_hg_05_led_images_2453068633.jpg",
+    "img":[
+      "https://i1.rozetka.ua/goods/2453068/barsky_hg_05_led_images_2453068633.jpg",
+      "https://i2.rozetka.ua/goods/2453069/barsky_hg_05_led_images_2453069129.jpg",
+     "https://i1.rozetka.ua/goods/2453069/barsky_hg_05_led_images_2453069505.jpg"
+    ],
+    "specifications": {
+      "type": "Геймерские столы",
+      "material" : "ЛДСП",
+      "width" : "1400 мм",
+      "Thickness" : "16 мм",
+      "height" : "750 мм",
+      "color" : "Черно-красный"
+    }
+  }
 ]
