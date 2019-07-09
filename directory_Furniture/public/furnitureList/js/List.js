@@ -3,23 +3,19 @@
 
 function setList(data){
     document.getElementById('root').innerHTML += `
- <div class="row" id="`+data.name+`" onclick="console.log(event.target)">
-    <div class="col s12 m7" >
-      <div class="card" id="`+data.name+`" >
-        <div class="card-image">
-          <img src=`+data.img+`>
-          <span class="card-title">`+data.name+`</span>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
+    <li id=`+data.name+` onclick="getData()"> 
+ <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+            <div class="card" >
+             
+             <img src=`+data.img+` class="card-img-top" alt="...">
+                <div class="card-body">
+                     <h5 class="card-title">`+data.name+`</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                 </div>
+                  </div>
     </div>
-  </div>
+  </li>
+
 `;
 }
 
@@ -34,28 +30,55 @@ fetch('/getlist', {method: 'get'}).then(function(response) {
             setList(myJson[key]);
         }
     });
-    });
+    setList(null);
+});
 
 
 
-// function Out() {
-//     let URL = '/out';
-//     fetch(URL, {
-//         method: 'post',
-//         // body: JSON.stringify(User),
-//         headers:{
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         }
-//     }).then(function(response) {
-//         // console.log(response.status);
-//         // if (response.status === 500) {
-//         //     var event = new Event("500", {bubbles: true, cancelable: true});
-//         //     document.dispatchEvent(event)
-//         // }
-//         // if (response.status === 200) {
-//         //     console.log(200)
-//         //     window.location.replace("/list");
-//         //}
-//     });
-// }
+function Out() {
+    console.log('out')
+    // let URL = '/out';
+    // fetch(URL, {
+    //     method: 'post',
+    //     // body: JSON.stringify(User),
+    //     headers:{
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json'
+    //     }
+    // }).then(function(response) {
+    //     // console.log(response.status);
+    //     // if (response.status === 500) {
+    //     //     var event = new Event("500", {bubbles: true, cancelable: true});
+    //     //     document.dispatchEvent(event)
+    //     // }
+    //     // if (response.status === 200) {
+    //     //     console.log(200)
+    //     //     window.location.replace("/list");
+    //     //}
+    // });
+}
+
+
+function getData() {
+    console.log(event.target.id);
+
+    let URL = '/list/'+ event.target.id;
+    fetch(URL, {
+        method: 'get',
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    // }).then(function(response) {
+    //     console.log(response.status);
+    //     if (response.status === 500) {
+    //         var event = new Event("500", {bubbles: true, cancelable: true});
+    //         document.dispatchEvent(event)
+    //     }
+    //     if (response.status === 200) {
+    //         console.log(200);
+    //
+    //     }
+     });
+        window.location.replace( '/list/:id' + event.target.id);
+}
