@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () =>{
+    Addimg();
     function getDataName(id) {
         let URL = '/list/' + id;
         fetch(URL, {

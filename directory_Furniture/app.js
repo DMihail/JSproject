@@ -5,15 +5,10 @@ const app = express();
 var jsonParser = bodyParser.json();
 var session = require('express-session');
 
-app.use (session ({
-    secret: 'work hard',
-    resave: true,
-    saveUninitialized: false
-}));
 app.use(express.static('public/authorization'));
 app.use(express.static('server/data/list.json'));
 app.use(express.static('public/furnitureList'));
-app.use(express.static('public/furnitureData'));
+
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.get('/singin', function (req, res) {
     res.sendFile(__dirname + "/public/authorization/html/SingIn.html");
@@ -41,13 +36,14 @@ app.get('/getlist', function (req, res) {
             res.status(201).json(list);
 });
 app.get('/list/:id', function (req, res) {
-    console.log( req.params.id);
-    app.get('/list/:id/' + req.params.id, function (req, res) {
+    console.log(req.params.id);
+    app.get('/id/TATI', function (req, res) {
+        app.use(express.static('public/furnitureData'));
         res.sendFile(__dirname + "/public/furnitureData/html/Data.html");
+        //res.redirect('/id/TATI');
     });
-    res.redirect('/list/:id/' + req.params.id);
-    // const list = require('./server/data/list');
-    res.status(201);
+
+   // res.status(201);
 });
 
 app.post('/out', function (req, res) {

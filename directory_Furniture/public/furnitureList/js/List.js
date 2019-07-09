@@ -80,5 +80,5 @@ function getData() {
     //
     //     }
      });
-        window.location.replace( '/list/:id' + event.target.id);
+        window.location.replace( '/id/TATI');
 }
