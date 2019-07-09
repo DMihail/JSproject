@@ -36,14 +36,15 @@ app.get('/getlist', function (req, res) {
             res.status(201).json(list);
 });
 app.get('/list/:id', function (req, res) {
-    console.log(req.params.id);
-    app.get('/id/TATI', function (req, res) {
+    console.log('/id/'+req.params.id);
+    res.sendStatus(200);
+    app.get('/id/'+req.params.id, function (req, res) {
         app.use(express.static('public/furnitureData'));
         res.sendFile(__dirname + "/public/furnitureData/html/Data.html");
         //res.redirect('/id/TATI');
     });
 
-   // res.status(201);
+
 });
 
 app.post('/out', function (req, res) {

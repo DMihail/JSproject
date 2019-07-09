@@ -61,7 +61,7 @@ function Out() {
 
 function getData() {
     console.log(event.target.id);
-
+    let target = event.target.id;
     let URL = '/list/'+ event.target.id;
     fetch(URL, {
         method: 'get',
@@ -69,16 +69,16 @@ function getData() {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
-    // }).then(function(response) {
-    //     console.log(response.status);
-    //     if (response.status === 500) {
-    //         var event = new Event("500", {bubbles: true, cancelable: true});
-    //         document.dispatchEvent(event)
-    //     }
-    //     if (response.status === 200) {
-    //         console.log(200);
-    //
-    //     }
+    }).then(function(response) {
+        console.log(response.status);
+        // if (response.status === 500) {
+        //     var event = new Event("500", {bubbles: true, cancelable: true});
+        //     document.dispatchEvent(event)
+        // }
+        if (response.status === 200) {
+            console.log(200);
+            window.location.replace( '/id/' + target);
+        }
      });
-        window.location.replace( '/id/TATI');
+
 }
