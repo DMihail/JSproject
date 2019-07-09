@@ -1,7 +1,9 @@
-const UserBase = require('./server/data/ParseBase');
+const list = require('./server/data/list');
 
 
-let base = new UserBase();
-//base.CreateUser('limb', 'limbor', 20, 'limb@mail.com', '1234');
-//base.FindUser('limb@mail.com', '1234');
-
+for (let key in list){
+       // console.log(list[key]['beds']);
+        for (let k in list[key]['beds']) {
+             console.log(list[key]['beds'][k]);
+        }
+}

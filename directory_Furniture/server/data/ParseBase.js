@@ -5,7 +5,7 @@ const data = require('../data/data');
 module.exports = class ParseBase {
     FindUser(mail, password){
         for (let key in data) {
-            if (data[key]['mail'] === mail && data[key]['password'] === password){
+            if (data[key]['mail'] === mail ){
                 console.log(true);
                 return true
             }

@@ -1,4 +1,8 @@
-    document.innerHTML  = `<form>
+const emailValidate = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+const passValidate  =  /^[0-9a-zA-Z]+$/;
+let validate = [];
+// document.getElementById('submit').disabled = true;
+document.innerHTML  = `<form>
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -23,7 +27,7 @@
         };
         console.log(User);
         let URL = '/singin';
-        return fetch(URL, {
+        fetch(URL, {
             method: 'post',
             body: JSON.stringify(User),
             headers:{
@@ -32,13 +36,21 @@
             }
         }).then(function(response) {
             console.log(response.status);
+           if (response.status === 500) {
+               var event = new Event("500", {bubbles: true, cancelable: true});
+               document.dispatchEvent(event)
+           }
+            if (response.status === 200) {
+                console.log(200)
+                window.location.replace("/list");
+            }
         });
     }
 
 
     document.getElementById('exampleInputEmail1').onblur = function () {
         let email = document.getElementById('exampleInputEmail1').value;
-        if (email === ''){
+        if (email === '' ){
             let mail =  document.getElementById('mail');
             mail.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="errorMail" role="alert"> &#10008;
          Invalid mail</div>`) ;
@@ -46,6 +58,7 @@
         else{
             let mail =  document.getElementById('mail');
             mail.insertAdjacentHTML('afterEnd', `<div class="alert alert-success" id="errorMail" role="alert">&#10004;</div>`);
+            validate.push(true);
         }
     };
     document.getElementById('exampleInputPassword1').onblur = function () {
@@ -58,6 +71,7 @@
         else{
             let password =  document.getElementById('pass');
             password.insertAdjacentHTML('afterEnd', `<div class="alert alert-success" id="errorPass" role="alert">&#10004;</div>`);
+            validate.push(true);
         }
     };
     document.getElementById('exampleInputEmail1').onfocus = function () {
@@ -68,13 +82,17 @@
         }
     };
     document.getElementById('exampleInputPassword1').onfocus = function () {
-        let mail =  document.getElementById('pass');
+        let pass =  document.getElementById('pass');
         if (document.getElementById( 'errorPass')) {
             console.log(true);
-            mail.parentNode.removeChild(document.getElementById( 'errorPass'));
+            pass.parentNode.removeChild(document.getElementById( 'errorPass'));
         }
     };
-    // function validate() {
-    //
-    //
-    // }
+
+document.addEventListener("500", function(event) {
+    let error =  document.getElementById('error');
+    error.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="errorMail" role="alert">
+        This user does not exist! Sign up!</div>`);
+}, false);
+
+
