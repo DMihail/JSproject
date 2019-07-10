@@ -5,20 +5,24 @@ const app = express();
 var jsonParser = bodyParser.json();
 var session = require('express-session');
 const list = require('./server/data/list');
-
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 
 app.use(express.static('public/authorization'));
 app.use(express.static('server/data/list.json'));
 app.use(express.static('public/furnitureList'));
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 app.get('/singin', function (req, res) {
     res.sendFile(__dirname + "/public/authorization/html/SingIn.html");
 });
+
+
 app.get('/singup', function (req, res) {
     res.sendFile(__dirname + "/public/authorization/html/SingUp.html");
 });
+
+
 app.post('/singin', jsonParser, function (req, res) {
     console.log(req.body);
     let base = new UserBase();
@@ -48,20 +52,28 @@ app.get('/getlist', function (req, res) {
            res.status(201).json(ul);
 });
 app.get('/list/:id', function (req, res) {
-    console.log('/id/'+req.params.id);
+    //console.log('/id/'+req.params.id);
     for (let key in  list){
        if (list[key]['id'] === req.params.id)  {
            res.sendStatus(200);
            app.get('/id/'+req.params.id, function (req, res) {
-             //  console.log(list[key]);
                app.use(express.static('public/furnitureData'));
                res.sendFile(__dirname + "/public/furnitureData/html/Data.html");
-             //  res.status(200).json(list[key]);
            });
        }else {
            res.sendStatus(500);
        }
     }
+});
+
+app.get('/gdata/:id', function (req, res) {
+    for (let key in  list){
+        if (list[key]['id'] === req.params.id)  {
+            //res.sendStatus(200);
+                console.log(list[key]);
+                res.status(200).json(list[key]);
+            }
+        }
 });
 
 

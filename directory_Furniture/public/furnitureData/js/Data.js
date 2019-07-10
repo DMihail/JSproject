@@ -1,27 +1,65 @@
 document.addEventListener('DOMContentLoaded', () =>{
-    // Addimg();
-    // console.log(window.location.href)
-        fetch(window.location.href, {method: 'get'}).then(function(response) {
+    fetch('/gdata/0001', {method: 'get'})
+        .then(function(response) {
             return response.json();
         })
-            .then(function(myJson) {
-                //console.log(JSON.stringify(myJson)
-                for (let key in myJson) {
-                    console.log(myJson[key]);
-                   // setList(myJson[key]);
-                }
-            });
+        .then(function(myJson) {
+            console.log(myJson["img"]);
+         Addimg(myJson['img']);
+         AddTable(myJson['specifications']);
+        });
 });
 
 
-function Addimg() {
-    document.getElementById('root').innerHTML += ` <div class="carousel-item active">
-            <img class="d-block w-100" src="http://images.zakupka.com/i3/firms/27/91/91094/gostinaya-alfa-mdf-prosto-mebli_35ee6dcf209fe25_300x300_1.jpg" alt="First slide">
-        </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDvNOGf_a4AJJGNOpEwDh3IzSG-cq4H9arxl9uI58C12t9qd8" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOEcpRBf4p318O5bUkWBsH2qBZ0NE4bWYBAePzxXux76IOsQw4EQ" alt="Third slide">
-        </div>`
+function Addimg(img) {
+    console.log(img);
+        document.getElementById('root').innerHTML += ` <div class="carousel-item active">
+            <img class="d-block w-100" src=`+img[0]+` alt="">
+        </div>`;
+    for (let i = 0; i < img.length; i++){
+        document.getElementById('root').innerHTML += ` <div class="carousel-item">
+            <img class="d-block w-100" src=`+img[i]+` alt=`+i+`>
+            </div>`
+    }
+}
+{/*<tr>*/}
+{/*    <td>John</td>*/}
+{/*    <td>Doe</td>*/}
+{/*    <td>john@example.com</td>*/}
+{/*</tr>*/}
+{/*<tr>*/}
+{/*<td>Mary</td>*/}
+{/*<td>Moe</td>*/}
+{/*<td>mary@example.com</td>*/}
+{/*</tr>*/}
+{/*<tr>*/}
+{/*<td>July</td>*/}
+{/*<td>Dooley</td>*/}
+{/*<td>july@example.com</td>*/}
+{/*</tr>*/}
+
+function AddTable(data) {
+   // console.log(data);
+    let mass = [];
+    for (let key in data) {
+     //   console.log(key,  data[key]);
+        mass.push(`<tr>
+            <td>
+                `+key+`
+            </td>
+            <td>
+                `+data[key]+`
+            </td>
+        </tr>`)
+
+    }
+    document.getElementById('table').innerHTML += ` 
+    <h2>Характеристики: </h2>
+    <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+       `+ mass+`
+        </tbody>
+    </table>`
 }

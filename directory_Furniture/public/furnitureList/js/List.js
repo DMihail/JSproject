@@ -13,7 +13,6 @@ function setList(data){
              </div>
     </div>
   </li>
-
 `;
 }
 
@@ -22,7 +21,6 @@ fetch('/getlist', {method: 'get'}).then(function(response) {
     return response.json();
 })
     .then(function(myJson) {
-        //console.log(JSON.stringify(myJson)
         for (let key in myJson) {
             console.log(myJson[key]);
             setList(myJson[key]);
