@@ -34,17 +34,18 @@ document.innerHTML  = `<form>
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
-        }).then(function(response) {
+         })
+           .then(function(response) {
             console.log(response.status);
-           if (response.status === 500) {
-               var event = new Event("500", {bubbles: true, cancelable: true});
-               document.dispatchEvent(event)
-           }
-            if (response.status === 200) {
-                console.log(200)
-                window.location.replace("/list");
-            }
-        });
+        //    if (response.status === 500) {
+        //        var event = new Event("500", {bubbles: true, cancelable: true});
+        //        document.dispatchEvent(event)
+        //    }
+        //     if (response.status === 200) {
+        //         console.log(200)
+                 window.location.replace("/list");
+        //     }
+         });
     }
 
 

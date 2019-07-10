@@ -3,17 +3,14 @@
 
 function setList(data){
     document.getElementById('root').innerHTML += `
-
             <div id=`+data.id+` onclick = "getData(event)">
                         <div class="card"  >
              <img src=`+data.img+` class="card-img-top" alt="...">
                 <div class="card-body">
-                     <h5 class="card-title">\`+data.name+\`</h5> 
+                     <h5 class="card-title">`+data.name+`</h5> 
                 </div>
              </div> 
         </div>
-
-
 `;
 }
 
@@ -58,7 +55,7 @@ function Out() {
 
 function getData(event) {
     console.log(event.target.id);
-    let target = event.target.id;
+     let target = event.target.id;
     let URL = '/list/'+ event.target.id;
     fetch(URL, {
         method: 'get',
@@ -66,7 +63,7 @@ function getData(event) {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
-    }).then(function(response) {
+     }).then(function(response) {
         console.log(response.status);
         // if (response.status === 500) {
         //     var event = new Event("500", {bubbles: true, cancelable: true});
@@ -74,7 +71,8 @@ function getData(event) {
         // }
         if (response.status === 200) {
             console.log(200);
-            window.location.replace( '/id/' + target);
+            window.location.replace( '/list/' + target + '?' + target) ;
+         //   window.location.replace( '/list/' + target) ;
         }
-     });
+    });
 }

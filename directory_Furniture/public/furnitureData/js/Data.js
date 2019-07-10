@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', () =>{
     let str = window.location.href;
-    console.log(str.indexOf('id/'));
-    fetch('/gdata/0002', {method: 'get'})
+    let id = str.substring(str.indexOf('?')+1);
+    console.log(id);
+    fetch('/gdata/' + id , {method: 'get'})
         .then(function(response) {
             return response.json();
         })
         .then(function(myJson) {
-            console.log(myJson["img"]);
+            //console.log(myJson["img"]);
          Addimg(myJson['img']);
          AddTable(myJson['specifications']);
         });
