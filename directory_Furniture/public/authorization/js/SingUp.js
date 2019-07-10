@@ -109,6 +109,26 @@ document.addEventListener("501", function(event) {
     error.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="errorMail" role="alert">
         User with such @mail already exists!</div>`);
 }, false);
-
-
+//
+// <form>
+//     <div className="form-group" id='mail'>
+//         <label htmlFor="exampleInputEmail1">Email address</label>
+//         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+//                placeholder="Enter email">
+//             <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.
+//             </small>
+//     </div>
+//     <div className="form-group" id='pass'>
+//         <label htmlFor="exampleInputPassword1">Password</label>
+//         <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password">
+//     </div>
+//     <div className="form-group" id='repitpassword'>
+//         <label htmlFor="exampleInputRepPassword1">Rapid Password</label>
+//         <input type="password" className="form-control" id="exampleInputRepPassword1" placeholder="Password">
+//     </div>
+//     <button type="button" onClick="Send()" className="btn btn-primary">Submit</button>
+//     <div className="form-group" id='error'>
+//     </div>
+//     <p><a href="/SingIn">SingIn</a></p>
+// </form>
 

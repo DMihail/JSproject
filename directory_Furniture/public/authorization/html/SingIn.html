@@ -2,25 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Authorization</title>
     <script src="../js/SingIn.js" defer></script>
 </head>
 <body>
-<form>
-<div class="form-group" id = 'mail'>
+<div class="container">
+    <div class="row">
+<div class="form-group col-xs-12 col-sm-12 col-md-8 col-lg-4 col-xl-4 col-xl-offset-6"  id = 'mail' >
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" name="mail" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 </div>
-<div class="form-group" id = 'pass'>
+    </div>
+    <div class="row">
+<div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xl-offset-6"  id = 'pass'>
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 </div>
+    </div>
     <div class="form-group" id = 'error'>
     </div>
     <p><a href="/SingUp">SingUp</a></p>
 <button type="button" class="btn btn-primary" id="submit" onclick={Send()}>Submit</button>
 </form>
+    </div>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

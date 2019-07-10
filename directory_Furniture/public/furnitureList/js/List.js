@@ -3,16 +3,17 @@
 
 function setList(data){
     document.getElementById('root').innerHTML += `
-    <li id=`+data.id+` onclick="getData()"> 
- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-            <div class="card" >
+
+            <div id=`+data.id+` onclick = "getData(event)">
+                        <div class="card"  >
              <img src=`+data.img+` class="card-img-top" alt="...">
                 <div class="card-body">
-                     <h5 class="card-title">`+data.name+`</h5> 
+                     <h5 class="card-title">\`+data.name+\`</h5> 
                 </div>
-             </div>
-    </div>
-  </li>
+             </div> 
+        </div>
+
+
 `;
 }
 
@@ -55,7 +56,7 @@ function Out() {
 }
 
 
-function getData() {
+function getData(event) {
     console.log(event.target.id);
     let target = event.target.id;
     let URL = '/list/'+ event.target.id;
@@ -76,5 +77,4 @@ function getData() {
             window.location.replace( '/id/' + target);
         }
      });
-
 }
