@@ -1,9 +1,11 @@
 #card{
-
     padding-left: 30px;
     padding-top: 30px;
 }
 .card{
     pointer-events: none;
-
+}
+img{
+    width: 200px;
+    height: 200px;
 }

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar fixed-top ">
     <a class="navbar-brand" href="#">Характеристики</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,13 +21,16 @@
                 <a class="nav-link" href="/List">Каталог <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">LogOut</a>
+                <a class="nav-link" onclick="Out()">LogOut</a>
             </li>
         </ul>
     </div>
 </nav>
+
+<div class="container" id="contable">
+    <div class="row">
 <div id="carousel" class="carousel slide" data-ride="carousel">
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
     <div class="carousel-inner">
         <div id="root"></div>
     </div>
@@ -41,13 +44,11 @@
     </a>
     </div>
 </div>
-
-<div class="container" id="contable">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
     <div id="table"></div>
     </div>
 </div>
-
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

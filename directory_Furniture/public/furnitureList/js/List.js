@@ -33,6 +33,7 @@ fetch('/getlist', {method: 'get'}).then(function(response) {
 
 function Out() {
     console.log('out')
+    window.location.replace('/singin')
     // let URL = '/out';
     // fetch(URL, {
     //     method: 'post',

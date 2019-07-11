@@ -27,16 +27,16 @@ app.post('/singin', jsonParser, function (req, res) {
     let base = new UserBase();
     if (base.FindUser(req.body.mail, req.body.password)){
         res.sendStatus(200);
-        app.get('/list', function (req, res) {
-           res.sendFile(__dirname + "/public/furnitureList/html/List.html");
-          //  res.sendFile(__dirname + "/public/furnitureData/html/Data.html");
-        });
+
     }
     else {
         res.sendStatus(500);
     }
 });
-
+app.get('/list', function (req, res) {
+    res.sendFile(__dirname + "/public/furnitureList/html/List.html");
+    //  res.sendFile(__dirname + "/public/furnitureData/html/Data.html");
+});
 app.get('/getlist', function (req, res) {
     let ul = {};
     for (let key in  list){
