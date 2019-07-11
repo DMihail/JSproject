@@ -1,9 +1,9 @@
-ul li {
-    display: inline;
-    float: left;
-    padding: 0px 1px;
-}
+#card{
 
+    padding-left: 30px;
+    padding-top: 30px;
+}
 .card{
     pointer-events: none;
+
 }

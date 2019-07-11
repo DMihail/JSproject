@@ -3,6 +3,7 @@
 
 function setList(data){
     document.getElementById('root').innerHTML += `
+ <div id="card" class="col-xs-12 col-sm-12 col-md-8 col-lg-4 col-xl-4">
             <div id=`+data.id+` onclick = "getData(event)">
                         <div class="card"  >
              <img src=`+data.img+` class="card-img-top" alt="...">
@@ -11,6 +12,7 @@ function setList(data){
                 </div>
              </div> 
         </div>
+             </div>
 `;
 }
 

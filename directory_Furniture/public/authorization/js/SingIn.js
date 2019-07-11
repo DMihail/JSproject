@@ -22,8 +22,8 @@ document.innerHTML  = `<form>
 
     function Send() {
         const  User = {
-            mail: document.getElementById('exampleInputEmail1').value,
-            password: document.getElementById('exampleInputPassword1').value
+            mail: document.getElementById('Email').value,
+            password: document.getElementById('Password').value
         };
         console.log(User);
         let URL = '/singin';
@@ -49,8 +49,8 @@ document.innerHTML  = `<form>
     }
 
 
-    document.getElementById('exampleInputEmail1').onblur = function () {
-        let email = document.getElementById('exampleInputEmail1').value;
+    document.getElementById('Email').onblur = function () {
+        let email = document.getElementById('Email').value;
         if (email === '' ){
             let mail =  document.getElementById('mail');
             mail.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="errorMail" role="alert"> &#10008;
@@ -62,8 +62,8 @@ document.innerHTML  = `<form>
             validate.push(true);
         }
     };
-    document.getElementById('exampleInputPassword1').onblur = function () {
-        let pass = document.getElementById('exampleInputPassword1').value;
+    document.getElementById('Password').onblur = function () {
+        let pass = document.getElementById('Password1').value;
         if (pass === ''){
             let password =  document.getElementById('pass');
             password.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="errorPass" role="alert"> &#10008;
@@ -75,14 +75,14 @@ document.innerHTML  = `<form>
             validate.push(true);
         }
     };
-    document.getElementById('exampleInputEmail1').onfocus = function () {
+    document.getElementById('Email').onfocus = function () {
         let mail =  document.getElementById('mail');
         if (document.getElementById( 'errorMail')) {
             console.log(true);
             mail.parentNode.removeChild(document.getElementById( 'errorMail'));
         }
     };
-    document.getElementById('exampleInputPassword1').onfocus = function () {
+    document.getElementById('Password').onfocus = function () {
         let pass =  document.getElementById('pass');
         if (document.getElementById( 'errorPass')) {
             console.log(true);
