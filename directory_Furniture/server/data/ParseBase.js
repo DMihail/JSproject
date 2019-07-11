@@ -5,7 +5,7 @@ const data = require('../data/data');
 module.exports = class ParseBase {
     FindUser(mail, password){
         for (let key in data) {
-            if (data[key]['mail'] === mail ){
+            if (data[key]['mail'] === mail && data[key]['password'] === password ){
                 console.log(true);
                 return true
             }
@@ -13,12 +13,10 @@ module.exports = class ParseBase {
         console.log(false);
         return false;
     }
-    CreateUser(Name, LasName, age, mail, password){
+    CreateUser(mail, password){
         let num =  JSON.stringify(data).indexOf(']');
-        let nowstr = JSON.stringify(data).slice(0, num) + ',{"mail":"'+mail+'","password":"'+password+'","name":"'+Name+'","lastname":"'+LasName+'","age":"'+age+'"}' + JSON.stringify(data).slice(num);
-      //  console.log(nowstr);
+        let nowstr = JSON.stringify(data).slice(0, num) + ',{"mail":"'+mail+'","password":"'+password+'"}' + JSON.stringify(data).slice(num);
         fs.writeFileSync('./server/data/data.json',nowstr,
             function (err, data) {});
-       // console.log(JSON.stringify(data));
     }
 };

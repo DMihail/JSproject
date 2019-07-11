@@ -7,9 +7,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             return response.json();
         })
         .then(function(myJson) {
-            //console.log(myJson["img"]);
          Addimg(myJson['img']);
-         AddTable(myJson['specifications']);
+         AddTable(myJson['specifications'], myJson['name'] );
         });
 });
 
@@ -17,25 +16,23 @@ document.addEventListener('DOMContentLoaded', () =>{
 function Addimg(img) {
     console.log(img);
         document.getElementById('root').innerHTML += ` <div class="carousel-item active">
-            <img class="d-block w-100" src=`+img[0]+` alt="">
+            <img class="d-block w-50 h-50" style="margin: 0 auto" src=${img[0]} alt="">
         </div>`;
     for (let i = 0; i < img.length; i++){
         document.getElementById('root').innerHTML += ` <div class="carousel-item">
-            <img class="d-block w-100" src=`+img[i]+` alt=`+i+`>
+            <img class="d-block w-50 h-50" style="margin: 0 auto" src=${img[i]} alt= ${i}>
             </div>`
     }
 }
-function AddTable(data) {
-   // console.log(data);
+function AddTable(data, name) {
     let mass = [];
     for (let key in data) {
-     //   console.log(key,  data[key]);
         mass.push(`<tr>
             <td>
-                `+key+`
+                ${key}
             </td>
             <td>
-                `+data[key]+`
+                ${data[key]}
             </td>
         </tr>`)
 
@@ -44,9 +41,10 @@ function AddTable(data) {
     <h2>Характеристики: </h2>
     <table class="table">
         <thead>
+        <tr><h3>${name}</h3></tr>
         </thead>
         <tbody>
-       `+ mass+`
+        ${mass}
         </tbody>
     </table>`
 }
