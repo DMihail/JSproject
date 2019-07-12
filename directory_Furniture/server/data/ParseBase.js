@@ -10,7 +10,6 @@ module.exports = class ParseBase {
                 return true
             }
         }
-        console.log(false);
         return false;
     }
     CreateUser(mail, password){

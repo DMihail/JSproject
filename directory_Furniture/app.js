@@ -3,9 +3,7 @@ const bodyParser = require('body-parser');
 const UserBase = require('./server/data/ParseBase');
 const app = express();
 var jsonParser = bodyParser.json();
-var session = require('express-session');
 const list = require('./server/data/list');
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(express.static('public/authorization'));
 app.use(express.static('server/data/list.json'));

@@ -9,24 +9,20 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
-<div class="form-group col-xs-12 col-sm-12 col-md-8 col-lg-4 col-xl-4 col-xl-offset-6"  id = 'mail' >
+    <div id="form" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+<div class="form-group "  id = 'mail' >
     <label for="Email">Email address</label>
     <input type="email" class="form-control" name="mail" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
 </div>
-    </div>
-    <div class="row">
-<div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xl-offset-6"  id = 'pass'>
+<div class="form-group"  id = 'pass'>
     <label for="Password">Password</label>
     <input type="password" class="form-control" id="Password" placeholder="Password">
-</div>
-    </div>
-    <div class="form-group" id = 'error'>
     </div>
     <p><a href="/SingUp">SingUp</a></p>
 <button type="button" class="btn btn-primary" id="submit" onclick={Send()}>Submit</button>
-</form>
-    </div>
+    <div class="form-group" id = 'error'>
+</div>
+</div>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -1,6 +1,3 @@
-
-//<div><button onClick="Out()">Out</button></div>
-
 function setList(data){
     document.getElementById('root').innerHTML += `
  <div id="card" class="col-xs-12 col-sm-12 col-md-8 col-lg-4 col-xl-4">
@@ -47,15 +44,8 @@ function getData(event) {
             'Content-Type': 'application/json'
         }
      }).then(function(response) {
-        console.log(response.status);
-        // if (response.status === 500) {
-        //     var event = new Event("500", {bubbles: true, cancelable: true});
-        //     document.dispatchEvent(event)
-        // }
         if (response.status === 200) {
-            console.log(200);
             window.location.replace( '/list/' + target + '?' + target) ;
-         //   window.location.replace( '/list/' + target) ;
         }
     });
 }

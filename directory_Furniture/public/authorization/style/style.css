@@ -1,15 +1,24 @@
 #error{
     position: relative;
-    top: 40px;
-    color: red;
-}
-
-#serror{
-    position: relative;
     top: -50px;
     left: 400px;
     color: red;
+    z-index: 99;
 }
+#mail{
+    padding: 15px;
+}
+#pass{
+    padding: 15px;
+}
+/*#serror{*/
+/*    position: relative;*/
+/*    top: -50px;*/
+/*    left: 400px;*/
+/*    color: red;*/
+/*}*/
 #form{
-border-color: black;
+    top: 200px;
+    margin: 0 auto;
+    border: 2px solid black;
 }
