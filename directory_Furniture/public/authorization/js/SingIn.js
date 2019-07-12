@@ -54,7 +54,7 @@ document.innerHTML  = `<form>
         if (email === '' ){
             let mail =  document.getElementById('mail');
             mail.insertAdjacentHTML('afterEnd', `<div  id="error" role="alert"> &#10008;
-         Invalid mail</div>`) ;
+        </div>`) ;
         }
         else{
             let mail =  document.getElementById('mail');
@@ -67,7 +67,7 @@ document.innerHTML  = `<form>
         if (pass === ''){
             let password =  document.getElementById('pass');
             password.insertAdjacentHTML('afterEnd', `<div id="error" role="alert"> &#10008;
-         Invalid password</div>`) ;
+        </div>`) ;
         }
         else{
             let password =  document.getElementById('pass');
