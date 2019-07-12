@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () =>{
 function Addimg(img) {
     console.log(img);
         document.getElementById('root').innerHTML += ` <div class="carousel-item active">
-            <img class="d-block w-50 h-50" style="margin: 0 auto" src=${img[0]} alt="">
+            <img class="d-block w-50 " style="margin: 0 auto ;height: 400px;" src=${img[0]} alt="">
         </div>`;
     for (let i = 0; i < img.length; i++){
         document.getElementById('root').innerHTML += ` <div class="carousel-item">
-            <img class="d-block w-50 h-50" style="margin: 0 auto" src=${img[i]} alt= ${i}>
+            <img class="d-block w-50" style="margin: 0 auto; height: 400px;" src=${img[i]} alt= ${i}>
             </div>`
     }
 }
