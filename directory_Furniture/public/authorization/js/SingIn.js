@@ -52,14 +52,14 @@ document.innerHTML  = `<form>
     document.getElementById('Email').onblur = function () {
         let email = document.getElementById('Email').value;
         if (email === '' || !emailValidate.test(email) ){
-            let mail =  document.getElementById('Email');
-            mail.insertAdjacentHTML('afterEnd', `<div  id="error" role="alert"> &#10008;
-        </div>`) ;
+        //     let mail =  document.getElementById('Email');
+        //     mail.insertAdjacentHTML('afterEnd', `<div  id="error" role="alert"> &#10008;
+        // </div>`) ;
         }
         else{
             validate.push(true);
-            let mail =  document.getElementById('mail');
-            mail.insertAdjacentHTML('afterEnd', `<div  id="error" role="alert">&#10004;</div>`);
+            // let mail =  document.getElementById('mail');
+            // mail.insertAdjacentHTML('afterEnd', `<div  id="error" role="alert">&#10004;</div>`);
             On();
         }
     };
@@ -67,35 +67,38 @@ document.innerHTML  = `<form>
     document.getElementById('Password').onblur = function () {
         let pass = document.getElementById('Password').value;
         if (pass === '' || !passValidate.test(pass) ){
-            let password =  document.getElementById('pass');
-            password.insertAdjacentHTML('afterEnd', `<div id="error" role="alert"> &#10008;
-        </div>`) ;
+        //     let password =  document.getElementById('pass');
+        //     password.insertAdjacentHTML('afterEnd', `<div id="error" role="alert"> &#10008;
+        // </div>`) ;
         }
         else{
             validate.push(true);
-            let password =  document.getElementById('pass');
-            password.insertAdjacentHTML('afterEnd', `<div  id="error" role="alert">&#10004;</div>`);
+            // let password =  document.getElementById('pass');
+            // password.insertAdjacentHTML('afterEnd', `<div  id="error" role="alert">&#10004;</div>`);
             On();
         }
     };
     document.getElementById('Email').onfocus = function () {
         let mail =  document.getElementById('mail');
         if (document.getElementById( 'error')) {
-            console.log(true);
-            mail.parentNode.removeChild(document.getElementById( 'error'));
+            // console.log(true);
+            // mail.parentNode.removeChild(document.getElementById( 'error'));
         }
     };
     document.getElementById('Password').onfocus = function () {
         let pass =  document.getElementById('pass');
         if (document.getElementById( 'error')) {
-            pass.parentNode.removeChild(document.getElementById( 'error'));
+            // pass.parentNode.removeChild(document.getElementById( 'error'));
         }
     };
 
 document.addEventListener("500", function(event) {
-    let error =  document.getElementById('error');
-    error.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="error" role="alert">
+    let error =  document.getElementById('adderror');
+    error.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="adderror" role="alert">
         This user does not exist!</div>`);
+    if (error.parentNode) {
+        error.parentNode.removeChild(document.getElementById('adderror'));
+    }
 }, false);
 
 

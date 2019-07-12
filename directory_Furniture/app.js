@@ -60,20 +60,13 @@ app.get('/gdata/:id', function (req, res) {
         }
 });
 
-
-app.post('/out', function (req, res) {
-    res.redirect('/singin');
-});
 app.post('/singup', jsonParser, function (req, res) {
-    console.log(req.body);
     let base = new UserBase();
-    if (base.FindUser(req.body.mail, req.body.password)){
-        console.log(501);
-        res.sendStatus(501);
+    if (base.CreateUser(req.body.mail, req.body.password)){
+        res.sendStatus(200);
     }
     else {
-        base.CreateUser(req.body.mail, req.body.password);
-        res.sendStatus(200);
+        res.sendStatus(501);
     }
 
 });

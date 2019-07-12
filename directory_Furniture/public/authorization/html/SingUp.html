@@ -9,10 +9,8 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
-
-<div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-4 col-xl-offset-6">
-    <div class="form">
+    <div class="container">
+        <div id="form" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
     <div class="form-group" id = 'mail'>
         <label for="Email">Email address</label>
         <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -22,16 +20,15 @@
         <input type="password" class="form-control" id="Password" placeholder="Password">
     </div>
     <div class="form-group" id = 'repitpassword'>
-        <label for="RepPassword">Rapit Password</label>
+        <label for="RepPassword">Repit Password</label>
         <input type="password" class="form-control" id="RepPassword" placeholder="Password">
     </div>
     <button type="button" onclick="Send()" class="btn btn-primary">Submit</button>
-    <div class="form-group" id = 'error'>
+
+            <p><a href="/">SingIn</a></p>
+            <div class="form-group" id = 'adderror'></div>
     </div>
-    <p><a href="/">SingIn</a></p>
 </div>
-</div>
-    </div>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
