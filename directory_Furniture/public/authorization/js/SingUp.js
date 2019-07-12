@@ -34,7 +34,6 @@ document.getElementById('Email').onblur = function () {
     else{
         let mail =  document.getElementById('mail');
         mail.insertAdjacentHTML('afterEnd', `<div  id="serror" role="alert">&#10004;</div>`);
-        validate.push(true);
     }
 };
 document.getElementById('Password').onblur = function () {
@@ -47,7 +46,6 @@ document.getElementById('Password').onblur = function () {
     else{
         let password =  document.getElementById('pass');
         password.insertAdjacentHTML('afterEnd', `<div  id="serror" role="alert">&#10004;</div>`);
-        validate.push(true);
     }
 };
 
@@ -62,7 +60,6 @@ document.getElementById('RepPassword').onblur = function () {
     else{
         let password =  document.getElementById('pass');
         password.insertAdjacentHTML('afterEnd', `<div  id="serror" role="alert">&#10004;</div>`);
-        validate.push(true);
     }
 };
 
@@ -90,12 +87,8 @@ document.getElementById('RepPassword').onfocus = function () {
 
 document.addEventListener("501", function(event) {
     let error = document.getElementById('error');
-    if (document.getElementsByClassName('alert alert-danger')) {
-        error.parentNode.removeChild(document.getElementById('serror'));
-    } else {
-
-    error.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="serror" role="alert">
+    error.parentNode.removeChild(document.getElementById('serror'));
+    error.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="error" role="alert">
         User with such @mail already exists!</div>`);
-}
 }, false);
 
