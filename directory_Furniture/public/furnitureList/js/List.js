@@ -32,27 +32,7 @@ fetch('/getlist', {method: 'get'}).then(function(response) {
 
 
 function Out() {
-    console.log('out')
-    window.location.replace('/singin')
-    // let URL = '/out';
-    // fetch(URL, {
-    //     method: 'post',
-    //     // body: JSON.stringify(User),
-    //     headers:{
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json'
-    //     }
-    // }).then(function(response) {
-    //     // console.log(response.status);
-    //     // if (response.status === 500) {
-    //     //     var event = new Event("500", {bubbles: true, cancelable: true});
-    //     //     document.dispatchEvent(event)
-    //     // }
-    //     // if (response.status === 200) {
-    //     //     console.log(200)
-    //     //     window.location.replace("/list");
-    //     //}
-    // });
+    window.location.replace('/')
 }
 
 

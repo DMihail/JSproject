@@ -48,3 +48,6 @@ function AddTable(data, name) {
         </tbody>
     </table>`
 }
+function Out() {
+    window.location.replace('/')
+}

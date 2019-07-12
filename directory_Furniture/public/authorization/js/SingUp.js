@@ -14,6 +14,9 @@ function Send() {
         }
     }).then(function(response) {
         console.log(response.status);
+        if (response.status === 200) {
+            window.location.replace('/')
+        }
         if (response.status === 501) {
             var event = new Event("501", {bubbles: true, cancelable: true});
             document.dispatchEvent(event)

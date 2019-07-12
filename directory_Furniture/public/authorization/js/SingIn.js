@@ -37,14 +37,14 @@ document.innerHTML  = `<form>
          })
            .then(function(response) {
             console.log(response.status);
-        //    if (response.status === 500) {
-        //        var event = new Event("500", {bubbles: true, cancelable: true});
-        //        document.dispatchEvent(event)
-        //    }
-        //     if (response.status === 200) {
-        //         console.log(200)
+           if (response.status === 500) {
+               var event = new Event("500", {bubbles: true, cancelable: true});
+               document.dispatchEvent(event)
+           }
+            if (response.status === 200) {
+                console.log(200);
                  window.location.replace("/list");
-        //     }
+            }
          });
     }
 
@@ -53,46 +53,46 @@ document.innerHTML  = `<form>
         let email = document.getElementById('Email').value;
         if (email === '' ){
             let mail =  document.getElementById('mail');
-            mail.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="errorMail" role="alert"> &#10008;
+            mail.insertAdjacentHTML('afterEnd', `<div  id="error" role="alert"> &#10008;
          Invalid mail</div>`) ;
         }
         else{
             let mail =  document.getElementById('mail');
-            mail.insertAdjacentHTML('afterEnd', `<div class="alert alert-success" id="errorMail" role="alert">&#10004;</div>`);
+            mail.insertAdjacentHTML('afterEnd', `<div  id="error" role="alert">&#10004;</div>`);
             validate.push(true);
         }
     };
     document.getElementById('Password').onblur = function () {
-        let pass = document.getElementById('Password1').value;
+        let pass = document.getElementById('Password').value;
         if (pass === ''){
             let password =  document.getElementById('pass');
-            password.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="errorPass" role="alert"> &#10008;
+            password.insertAdjacentHTML('afterEnd', `<div id="error" role="alert"> &#10008;
          Invalid password</div>`) ;
         }
         else{
             let password =  document.getElementById('pass');
-            password.insertAdjacentHTML('afterEnd', `<div class="alert alert-success" id="errorPass" role="alert">&#10004;</div>`);
+            password.insertAdjacentHTML('afterEnd', `<div  id="error" role="alert">&#10004;</div>`);
             validate.push(true);
         }
     };
     document.getElementById('Email').onfocus = function () {
         let mail =  document.getElementById('mail');
-        if (document.getElementById( 'errorMail')) {
+        if (document.getElementById( 'error')) {
             console.log(true);
-            mail.parentNode.removeChild(document.getElementById( 'errorMail'));
+            mail.parentNode.removeChild(document.getElementById( 'error'));
         }
     };
     document.getElementById('Password').onfocus = function () {
         let pass =  document.getElementById('pass');
-        if (document.getElementById( 'errorPass')) {
+        if (document.getElementById( 'error')) {
             console.log(true);
-            pass.parentNode.removeChild(document.getElementById( 'errorPass'));
+            pass.parentNode.removeChild(document.getElementById( 'error'));
         }
     };
 
 document.addEventListener("500", function(event) {
     let error =  document.getElementById('error');
-    error.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="errorMail" role="alert">
+    error.insertAdjacentHTML('afterEnd', `<div class="alert alert-danger" id="error" role="alert">
         This user does not exist! Sign up!</div>`);
 }, false);
 
