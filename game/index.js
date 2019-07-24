@@ -6,12 +6,6 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-// const coordinate = {
-//     x1: null,
-//     y1: null,
-//     x2: null,
-//     y2: null
-// };
 
 const changeSprite = {
     sprite1: null,
@@ -105,22 +99,6 @@ function listener (event) {
     ChangePlase(event)
 }
 
-// function ChangePlase(x, y) {
-//     if (coordinate.x1 !== null  && coordinate.x2 !== null){
-//         for (let key in coordinate)  {
-//             coordinate[key] = null;
-//             ChangePlase(x,y)
-//         }
-//     }else
-//         if (coordinate.x1 === null) {
-//             coordinate.x1 = x;
-//             coordinate.y1 = y;
-//         }else
-//         if (coordinate.x2 === null) {
-//             coordinate.x2 = x;
-//             coordinate.y2 = y;
-//         }
-//         }
 function ChangePlase(sprite) {
 
    if (changeSprite.sprite1 !== null && changeSprite.sprite2 !== null){
@@ -129,10 +107,12 @@ function ChangePlase(sprite) {
        x2 = changeSprite.sprite2.x;
        y1 = changeSprite.sprite1.y;
        y2 = changeSprite.sprite2.y;
-       changeSprite.sprite2.x = x1;
-       changeSprite.sprite1.x = x2;
-       changeSprite.sprite2.y = y1;
-       changeSprite.sprite1.y = y2;
+       if(Math.abs(x1 - x2) === 50 || Math.abs(y1 - y2) === 25){
+           changeSprite.sprite2.x = x1;
+           changeSprite.sprite1.x = x2;
+           changeSprite.sprite2.y = y1;
+           changeSprite.sprite1.y = y2;
+       }
        for (let key in changeSprite){
            changeSprite[key] = null;
        }
