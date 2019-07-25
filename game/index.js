@@ -78,39 +78,16 @@ function create() {
 
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
-            let num = getRandomInt(0, gemMass.length );
-            let gem = platforms.create(i * 50, j *25, gemMass[num]);
-            gem.width = 25;
-            gem.height = 25;
-            gem.inputEnabled = true;
-            gem.events.onInputDown.add(listener, this);
+            AddGem(i, j)
         }
     }
-    //|| platforms.children[i].key === "gem03" && platforms.children[i + 10].key === "gem03"
-    for (let m = 0; m < gemMass.length; m++){
-    for (let i = 0; i < platforms.children.length; i++) {
-        if (platforms.children[i].key === gemMass[m] && platforms.children[i + 1].key === gemMass[m]) {
-            let massGem = [];
-            for (let j = i; j < Math.ceil(i / 10) * 10; j++) {
-                if (platforms.children[j].key === gemMass[m]) {
-                    massGem.push(j);
-                } else {
-                    break;
-                }
-            }
-            console.log(massGem);
-            if (massGem.length >= 3 && trueMass(massGem)) {
-                console.log('delete');
-                for (let del = 0; del < massGem.length; del++) {
-                    console.log(gemMass[m]);
-                    let num = massGem[del];
-                    platforms.children[num - del].destroy();
-                }
-            }
-        }
-    }
- }
 
+    console.log(platforms.children);
+    gemMass.map(gem => {
+        DellGem(gem);
+    });
+
+    //|| platforms.children[i].key === "gem03" && platforms.children[i + 10].key === "gem03"
 }
 function update() {
 
@@ -120,7 +97,6 @@ function update() {
 }
 
 function listener (event) {
-// event.x += 30;
     addSprite(event)
 }
 
@@ -159,16 +135,10 @@ function ChangePlase() {
                    changeSprite.sprite2.y += 1;
                }
            }
-
-           // changeSprite.sprite2.x = x1;
-           // changeSprite.sprite1.x = x2;
-           // changeSprite.sprite2.y = y1;
-           // changeSprite.sprite1.y = y2;
        }
        for (let key in changeSprite){
            changeSprite[key] = null;
        }
-       // ChangePlase(sprite);
    }
 
 }
@@ -218,3 +188,38 @@ function trueMass(mass) {
 // console.log(trueMass([1,2,3,4,5]));
 // // console.log(trueMass([23, 24, 25]));
 // // console.log(trueMass([1, 2, 3, 4,5, 6]));
+
+
+function DellGem(gem) {
+        for (let i = 0; i < platforms.children.length; i++) {
+            if (platforms.children[i].key === gem && platforms.children[i + 1].key === gem) {
+                let massGem = [];
+                for (let j = i; j < Math.ceil(i / 10) * 10; j++) {
+                    if (platforms.children[j].key === gem) {
+                        massGem.push(j);
+                    } else {
+                        break;
+                    }
+                }
+                console.log(massGem);
+                if (massGem.length >= 3 && trueMass(massGem)) {
+                    console.log('delete');
+                    for (let del = 0; del < massGem.length; del++) {
+                        console.log(gem);
+                        let num = massGem[del];
+                        platforms.children[num - del].destroy();
+                    }
+                }
+            }
+        }
+}
+
+
+function AddGem(i, j) {
+    let num = getRandomInt(0, gemMass.length );
+    let gem = platforms.create(i * 50, j *25, gemMass[num]);
+    gem.width = 25;
+    gem.height = 25;
+    gem.inputEnabled = true;
+    gem.events.onInputDown.add(listener, this);
+}
