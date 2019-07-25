@@ -1,7 +1,8 @@
 const game = new Phaser.Game(480, 320, Phaser.AUTO, null, {preload: preload, create: create, update: update});
 let sprite;
 let backgraund;
-
+let playBackground = true;
+let backgraundAudio;
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -30,6 +31,7 @@ function preload() {
     game.load.audio('select7', ['audio/select-7.mp3']);
     game.load.audio('select8', ['audio/select-8.mp3']);
     game.load.audio('select9', ['audio/select-9.mp3']);
+    game.load.image('fon', 'images/backgrounds/background.jpg');
     game.load.image('donut', 'images/donut.png');
     game.load.image('gem01', 'images/game/gem-01.png');
     game.load.image('gem02', 'images/game/gem-02.png');
@@ -61,8 +63,11 @@ function preload() {
     game.load.image('timeup', 'images/text-timeup.png');
 }
 function create() {
-    music = game.add.audio('background');
-    music.play();
+    game.add.tileSprite(0, 0, 1000, 600, 'fon');
+    backgraundAudio = game.add.audio('background');
+    let backgroundAudioImage = game.add.sprite( 300, 300, 'sfx');
+    backgroundAudioImage.events.onInputDown.add(StatePlayAudio, this);
+    backgraundAudio.play();
 
    // game.physics.startSystem(Phaser.Physics.ARCADE);
    // sprite = game.add.sprite(50, 50, 'background');
@@ -73,8 +78,8 @@ function create() {
             sprite.width = 25;
             sprite.height = 25;
             sprite.inputEnabled = true;
-            sprite.key  = `${i},${j}`;
-            sprite.frame = gemMass[num];
+           // sprite.key  = `${i},${j}`;
+            //sprite.frame = gemMass[num];
             sprite.events.onInputDown.add(listener, this);
         }
     }
@@ -85,9 +90,9 @@ function create() {
    // sprite.body.velocity.set(10, 100)
 }
 function update() {
-   // if (!music.isPlaying) {
-     //   music.play();
-   // }
+
+AutoplayMusic();
+   ChangePlase()
    // game.physics.arcade.collide(ball, paddle);
    // sprite.x = game.input.x;    // sprite.x += 1;
     // sprite.y += 1;
@@ -95,12 +100,10 @@ function update() {
 
 function listener (event) {
 // event.x += 30;
-//ChangePlase(event.x, event.y)
-    ChangePlase(event)
+    addSprite(event)
 }
 
-function ChangePlase(sprite) {
-
+function ChangePlase() {
    if (changeSprite.sprite1 !== null && changeSprite.sprite2 !== null){
        let x1, x2, y1, y2;
        x1 = changeSprite.sprite1.x;
@@ -108,22 +111,67 @@ function ChangePlase(sprite) {
        y1 = changeSprite.sprite1.y;
        y2 = changeSprite.sprite2.y;
        if(Math.abs(x1 - x2) === 50 || Math.abs(y1 - y2) === 25){
-           changeSprite.sprite2.x = x1;
-           changeSprite.sprite1.x = x2;
-           changeSprite.sprite2.y = y1;
-           changeSprite.sprite1.y = y2;
+           if (x1 < x2) {
+               for (;changeSprite.sprite1.x < x2;) {
+                   changeSprite.sprite1.x += 1;
+                   changeSprite.sprite2.x -= 1;
+               }
+           }
+           else
+               if (x1 > x2) {
+               for (;changeSprite.sprite1.x > x2;) {
+                   changeSprite.sprite1.x -= 1;
+                   changeSprite.sprite2.x += 1;
+               }
+           }
+           else
+           if (y1 < y2) {
+               for (;changeSprite.sprite1.y < y2;) {
+                   changeSprite.sprite1.y += 1;
+                   changeSprite.sprite2.y -= 1;
+               }
+           }
+           else
+               if (y1 > y2) {
+               for (;changeSprite.sprite2.y > y1;) {
+                   changeSprite.sprite1.y -= 1;
+                   changeSprite.sprite2.y += 1;
+               }
+           }
+
+           // changeSprite.sprite2.x = x1;
+           // changeSprite.sprite1.x = x2;
+           // changeSprite.sprite2.y = y1;
+           // changeSprite.sprite1.y = y2;
        }
        for (let key in changeSprite){
            changeSprite[key] = null;
        }
-       ChangePlase(sprite);
-   } else
-       if (changeSprite.sprite1 === null) {
-           changeSprite.sprite1 = sprite
-       } else
-            if (changeSprite.sprite2 === null) {
-                 changeSprite.sprite2 = sprite
-            }
+       // ChangePlase(sprite);
+   }
+
+}
+
+function addSprite(sprite) {
+    if (changeSprite.sprite1 === null) {
+        changeSprite.sprite1 = sprite
+    } else
+    if (changeSprite.sprite2 === null) {
+        changeSprite.sprite2 = sprite
+    }
 
     console.log(changeSprite)
+}
+
+function AutoplayMusic() {
+    if (playBackground) {
+        if (!backgraundAudio.isPlaying) {
+            backgraundAudio.play();
+        }
+    }
+}
+
+function StatePlayAudio(event) {
+     console.log(event);
+    playBackground = !playBackground;
 }
