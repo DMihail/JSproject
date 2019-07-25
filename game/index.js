@@ -83,46 +83,33 @@ function create() {
             gem.width = 25;
             gem.height = 25;
             gem.inputEnabled = true;
-            //gem.key  = `${i},${j}`;
-            //gem.frame = gemMass[num];
             gem.events.onInputDown.add(listener, this);
         }
     }
     //|| platforms.children[i].key === "gem03" && platforms.children[i + 10].key === "gem03"
-    // console.log(platforms.children)
-    for (let i = 0; i < platforms.children.length; i++){
-        if (platforms.children[i].key === "gem03"  && platforms.children[i + 1].key === "gem03" ){
-
+    for (let m = 0; m < gemMass.length; m++){
+    for (let i = 0; i < platforms.children.length; i++) {
+        if (platforms.children[i].key === gemMass[m] && platforms.children[i + 1].key === gemMass[m]) {
             let massGem = [];
-            for (let j = i; j <  Math.ceil(i/ 10) * 10 ; j++){
-                  if (platforms.children[j].key === "gem03"){
-                      massGem.push(j);
-                  }
-                  else {
-                      break;
-                  }
-            }
-            console.log(massGem);
-            //console.log(trueMass(massGem));
-            if (massGem.length >= 3 && trueMass(massGem)){
-                console.log('delete');
-                for (let del = 0 ; del < massGem.length; del++){
-                    let num = massGem[del];
-                    platforms.children[num - del].destroy();
-                    // console.log(platforms.children)
+            for (let j = i; j < Math.ceil(i / 10) * 10; j++) {
+                if (platforms.children[j].key === gemMass[m]) {
+                    massGem.push(j);
+                } else {
+                    break;
                 }
             }
-        //   platforms.children[i].visible = false;
-         //    //platforms.children[i + 1].visible = true;
-         //      platforms.children[i].destroy();
-         //    platforms.children[i + 1].destroy();
-
-
-         }
-            // else {
-        //     platforms.children[i].visible = false;
-        // }
+            console.log(massGem);
+            if (massGem.length >= 3 && trueMass(massGem)) {
+                console.log('delete');
+                for (let del = 0; del < massGem.length; del++) {
+                    console.log(gemMass[m]);
+                    let num = massGem[del];
+                    platforms.children[num - del].destroy();
+                }
+            }
+        }
     }
+ }
 
 }
 function update() {
