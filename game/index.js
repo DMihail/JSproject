@@ -1,8 +1,10 @@
 const game = new Phaser.Game(480, 320, Phaser.AUTO, null, {preload: preload, create: create, update: update});
 let sprite;
+let platforms;
 let backgraund;
 let playBackground = true;
 let backgraundAudio;
+let backgroundAudioImage;
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -63,39 +65,62 @@ function preload() {
     game.load.image('timeup', 'images/text-timeup.png');
 }
 function create() {
-    game.add.tileSprite(0, 0, 1000, 600, 'fon');
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+    game.add.sprite(0, 0, 'fon');
     backgraundAudio = game.add.audio('background');
-    let backgroundAudioImage = game.add.sprite( 300, 300, 'sfx');
+    backgroundAudioImage = game.add.sprite( 400, 250, 'sfx');
+    backgroundAudioImage.width = 50;
+    backgroundAudioImage.height = 50;
+    backgroundAudioImage.inputEnabled = true;
     backgroundAudioImage.events.onInputDown.add(StatePlayAudio, this);
     backgraundAudio.play();
+    platforms = game.add.group();
+    platforms.enableBody = true;
 
-   // game.physics.startSystem(Phaser.Physics.ARCADE);
-   // sprite = game.add.sprite(50, 50, 'background');
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
             let num = getRandomInt(0, gemMass.length );
-            sprite = game.add.sprite(i * 50, j *25, gemMass[num]);
-            sprite.width = 25;
-            sprite.height = 25;
-            sprite.inputEnabled = true;
-           // sprite.key  = `${i},${j}`;
-            //sprite.frame = gemMass[num];
-            sprite.events.onInputDown.add(listener, this);
+            let gem = platforms.create(i * 50, j *25, gemMass[num]);
+            gem.width = 25;
+            gem.height = 25;
+            gem.inputEnabled = true;
+            //gem.key  = `${i},${j}`;
+            //gem.frame = gemMass[num];
+            gem.events.onInputDown.add(listener, this);
         }
     }
+    //|| platforms.children[i].key === "gem03" && platforms.children[i + 10].key === "gem03"
+    console.log(platforms.children)
+    for (let i = 0; i < platforms.children.length; i++){
+        if (platforms.children[i].key === "gem03"  && platforms.children[i + 1].key === "gem03" ){
+         //    console.log('gem03++' + i , i + 1)
+            let massGem = [];
+            for (let j = i; j <  Math.ceil(i/ 10) * 10 ; j++){
+                  if (platforms.children[j].key === "gem03"){
+                      massGem.push(j);
+                  }
+            }
+            if (massGem.length >= 3){
+                console.log(massGem);
+            }
+        //   platforms.children[i].visible = false;
+         //    //platforms.children[i + 1].visible = true;
+         //      platforms.children[i].destroy();
+         //    platforms.children[i + 1].destroy();
 
-    // game.physics.enable(sprite, Phaser.Physics.ARCADE);
-    // sprite.body.collideWorldBounds = true;
-    // sprite.body.bounce.set(1);
-   // sprite.body.velocity.set(10, 100)
+
+         }
+            // else {
+        //     platforms.children[i].visible = false;
+        // }
+    }
+
 }
 function update() {
 
-AutoplayMusic();
-   ChangePlase()
-   // game.physics.arcade.collide(ball, paddle);
-   // sprite.x = game.input.x;    // sprite.x += 1;
-    // sprite.y += 1;
+//AutoplayMusic();
+   //ChangePlase()
+
 }
 
 function listener (event) {
@@ -164,14 +189,19 @@ function addSprite(sprite) {
 }
 
 function AutoplayMusic() {
+    console.log(playBackground)
     if (playBackground) {
         if (!backgraundAudio.isPlaying) {
             backgraundAudio.play();
+        }
+    }else {
+        if (backgraundAudio.isPlaying) {
+            backgraundAudio.pause();
         }
     }
 }
 
 function StatePlayAudio(event) {
-     console.log(event);
     playBackground = !playBackground;
+    console.log(playBackground)
 }
