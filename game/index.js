@@ -15,8 +15,7 @@ const changeSprite = {
     sprite2: null
 };
 
-const gemMass = ['gem01', 'gem02', 'gem03', 'gem04', 'gem05', 'gem06', 'gem07'//, 'gem08', 'gem09', 'gem10', 'gem11', 'gem12'
-];
+const gemMass = ['gem01', 'gem02', 'gem03', 'gem04', 'gem05', 'gem06', 'gem07'];
 function preload() {
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.pageAlignHorizontally = true;
@@ -73,7 +72,7 @@ function create() {
     backgroundAudioImage.height = 50;
     backgroundAudioImage.inputEnabled = true;
     backgroundAudioImage.events.onInputDown.add(StatePlayAudio, this);
-    backgraundAudio.play();
+ //   backgraundAudio.play();
     platforms = game.add.group();
     platforms.enableBody = true;
 
@@ -90,18 +89,28 @@ function create() {
         }
     }
     //|| platforms.children[i].key === "gem03" && platforms.children[i + 10].key === "gem03"
-    console.log(platforms.children)
+    // console.log(platforms.children)
     for (let i = 0; i < platforms.children.length; i++){
         if (platforms.children[i].key === "gem03"  && platforms.children[i + 1].key === "gem03" ){
-         //    console.log('gem03++' + i , i + 1)
+
             let massGem = [];
             for (let j = i; j <  Math.ceil(i/ 10) * 10 ; j++){
                   if (platforms.children[j].key === "gem03"){
                       massGem.push(j);
                   }
+                  else {
+                      break;
+                  }
             }
-            if (massGem.length >= 3){
-                console.log(massGem);
+            console.log(massGem);
+            //console.log(trueMass(massGem));
+            if (massGem.length >= 3 && trueMass(massGem)){
+                console.log('delete');
+                for (let del = 0 ; del < massGem.length; del++){
+                    let num = massGem[del];
+                    platforms.children[num - del].destroy();
+                    // console.log(platforms.children)
+                }
             }
         //   platforms.children[i].visible = false;
          //    //platforms.children[i + 1].visible = true;
@@ -205,3 +214,20 @@ function StatePlayAudio(event) {
     playBackground = !playBackground;
     console.log(playBackground)
 }
+
+function trueMass(mass) {
+   for (let i = 0; i < mass.length - 1; i++){
+           if (mass[i] !== (mass[i + 1] - 1)){
+               return false;
+       }
+
+   }
+   return true;
+
+}
+
+//console.log(trueMass([1,2,3,4,5]));
+// console.log(3 === (4 - 1));
+// console.log(trueMass([1,2,3,4,5]));
+// // console.log(trueMass([23, 24, 25]));
+// // console.log(trueMass([1, 2, 3, 4,5, 6]));
