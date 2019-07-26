@@ -1,10 +1,24 @@
 const game = new Phaser.Game(480, 320, Phaser.AUTO, null, {preload: preload, create: create, update: update});
-let sprite;
-let platforms;
-let backgraund;
-let playBackground = true;
-let backgraundAudio;
-let backgroundAudioImage;
+let sprite,
+     platforms,
+     playBackground = true,
+     backgraundAudio,
+     backgroundAudioImage,
+     ScoreImage,
+     killAudio,
+     ScoreText,
+     score = 0,
+     select1,
+     select2,
+     select3,
+     select4,
+     select5,
+     select6,
+     select7,
+     select8,
+     select9;
+const gemMass = ['gem01', 'gem02', 'gem03', 'gem04', 'gem05', 'gem06', 'gem07'];
+
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -15,7 +29,7 @@ const changeSprite = {
     sprite2: null
 };
 
-const gemMass = ['gem01', 'gem02', 'gem03', 'gem04', 'gem05', 'gem06', 'gem07'];
+
 function preload() {
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.pageAlignHorizontally = true;
@@ -56,7 +70,7 @@ function preload() {
     game.load.image('particleEx1', 'images/particles/particle_ex1.png');
     game.load.image('particleEx2', 'images/particles/particle_ex2.png');
     game.load.image('particleEx3', 'images/particles/particle_ex3.png');
-    game.load.image('bgscore', 'images/bg_score.png');
+    game.load.image('bgscore', 'images/bg-score.png');
     game.load.image('bigshadow', 'images/big-shadow.png');
     game.load.image('play', 'images/btn-play.png');
     game.load.image('sfx', 'images/btn-sfx.png');
@@ -67,7 +81,22 @@ function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.add.sprite(0, 0, 'fon');
     backgraundAudio = game.add.audio('background');
+    killAudio = game.add.audio('kill');
+    select1 = game.add.audio('select1');
+    select2 = game.add.audio('select2');
+    select3 = game.add.audio('select3');
+    select4 = game.add.audio('select4');
+    select5 = game.add.audio('select5');
+    select6 = game.add.audio('select6');
+    select7 = game.add.audio('select7');
+    select8 = game.add.audio('select8');
+    select9 = game.add.audio('select9');
+
     backgroundAudioImage = game.add.sprite( 400, 250, 'sfx');
+    ScoreImage = game.add.sprite( 150, 250, 'bgscore');
+    ScoreText = this.add.text(200, 280, score, { fontSize: '22px', fill: '#FFFFFF' });
+    ScoreImage.width = 200;
+    ScoreImage.height = 100;
     backgroundAudioImage.width = 50;
     backgroundAudioImage.height = 50;
     backgroundAudioImage.inputEnabled = true;
@@ -92,7 +121,8 @@ function create() {
 function update() {
 
 //AutoplayMusic();
-   //ChangePlase()
+   //ChangePlase();
+
 
 }
 
@@ -192,22 +222,27 @@ function trueMass(mass) {
 
 function DellGem(gem) {
         for (let i = 0; i < platforms.children.length; i++) {
-            if (platforms.children[i].key === gem && platforms.children[i + 1].key === gem) {
-                let massGem = [];
-                for (let j = i; j < Math.ceil(i / 10) * 10; j++) {
-                    if (platforms.children[j].key === gem) {
-                        massGem.push(j);
-                    } else {
-                        break;
+            if (i + 1 !== platforms.children.length) {
+                if (platforms.children[i].key === gem && platforms.children[i + 1].key === gem) {
+                    let massGem = [];
+                    for (let j = i; j < Math.ceil(i / 10) * 10; j++) {
+                        if (platforms.children[j].key === gem) {
+                            massGem.push(j);
+                        } else {
+                            break;
+                        }
                     }
-                }
-                console.log(massGem);
-                if (massGem.length >= 3 && trueMass(massGem)) {
-                    console.log('delete');
-                    for (let del = 0; del < massGem.length; del++) {
-                        console.log(gem);
-                        let num = massGem[del];
-                        platforms.children[num - del].destroy();
+                    console.log(massGem);
+                    if (massGem.length >= 3 && trueMass(massGem)) {
+                        console.log('delete');
+                        ScoreSumm(massGem.length);
+                      //  killAudio.play();
+                        for (let del = 0; del < massGem.length; del++) {
+                            console.log(gem);
+                            let num = massGem[del];
+                            platforms.children[num - del].destroy();
+                        }
+                        FallGem(massGem);
                     }
                 }
             }
@@ -223,3 +258,65 @@ function AddGem(i, j) {
     gem.inputEnabled = true;
     gem.events.onInputDown.add(listener, this);
 }
+
+
+function FallGem(y) {
+  //  console.log(Math.max.apply(null, y));
+    let num = Math.max.apply(null, y);
+    let zel, drob;
+    if(y < 10){
+        console.log(num)
+    }else {
+         zel = Math.trunc(num/10);
+         drob = num - zel*10;
+        console.log(zel, drob)
+    }
+
+    // for (let i = 0;  i < y.length; i++){
+    //
+    // }
+
+   // platforms.children
+}
+
+function ScoreSumm(length) {
+    switch (length) {
+        case 3:
+            score += 300;
+            ScoreText.setText(score);
+           // select1.play();
+            break;
+        case 4:
+            score += 400;
+            ScoreText.setText(score);
+          //  select2.play();
+            break;
+        case 5:
+            score += 500;
+            ScoreText.setText(score);
+           // select3.play();
+            break;
+        case 6:
+            score += 600;
+            ScoreText.setText(score);
+            //select4.play();
+            break;
+        case 7:
+            score += 700;
+            ScoreText.setText(score);
+          //  select5.play();
+            break;
+        case 8:
+            score += 800;
+            ScoreText.setText(score);
+            //select6.play();
+            break;
+        case 9:
+            score += 900;
+            ScoreText.setText(score);
+            //select7.play();
+            break;
+    }
+
+}
+
