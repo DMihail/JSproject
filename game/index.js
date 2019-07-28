@@ -16,7 +16,8 @@ let sprite,
      select6,
      select7,
      select8,
-     select9;
+     select9,
+    gran;
 const gemMass = ['gem01', 'gem02', 'gem03', 'gem04', 'gem05', 'gem06', 'gem07'];
 
 function getRandomInt(min, max) {
@@ -91,7 +92,13 @@ function create() {
     select7 = game.add.audio('select7');
     select8 = game.add.audio('select8');
     select9 = game.add.audio('select9');
-
+    gran = game.add.sprite(0, 240, 'gran');
+    gran.width = 800;
+    gran.height = 3;
+    gran.inputEnabled = true;
+    //game.physics.enable(gran, Phaser.Physics.ARCADE);
+   // gran.body.collideWorldBounds = true;
+    //gran.body.velocity.set(0, 0);
     backgroundAudioImage = game.add.sprite( 400, 250, 'sfx');
     ScoreImage = game.add.sprite( 150, 250, 'bgscore');
     ScoreText = this.add.text(200, 280, score, { fontSize: '22px', fill: '#FFFFFF' });
@@ -112,58 +119,102 @@ function create() {
     }
 
     console.log(platforms.children);
-    gemMass.map(gem => {
-        DellGem(gem);
-    });
+    // gemMass.map(gem => {
+    //     DellGem(gem);
+    // });
+    // setTimeout(function () {
+    //     gemMass.map(gem => {
+    //         DellGemVertical(gem);
+    //     });
+    // }, 3000);
 
+    // setTimeout(function () {
+    //     gemMass.map(gem => {
+    //         DellGemGorizontal(gem);
+    //     });
+    // }, 6000);
+
+
+    gemMass.map(gem => {
+        DellGemVertical(gem);
+    });
+    // gemMass.map(gem => {
+    //     DellGemGorizontal(gem);
+    // });
     //|| platforms.children[i].key === "gem03" && platforms.children[i + 10].key === "gem03"
 }
 function update() {
+    game.physics.arcade.collide(gran, platforms.children);
+    game.physics.arcade.collide(platforms.children, platforms.children);
+
+    // gemMass.map(gem => {
+    //     DellGemGorizontal(gem);
+    // });
+
+
+    // gemMass.map(gem => {
+    //     DellGemVertical(gem);
+    // });
+    ChangePlase();
+    // gemMass.map(gem => {
+    //     DellGemVertical(gem);
+    // });
 
 //AutoplayMusic();
-   //ChangePlase();
+
 
 
 }
 
 function listener (event) {
     addSprite(event)
+
 }
 
 function ChangePlase() {
    if (changeSprite.sprite1 !== null && changeSprite.sprite2 !== null){
+       let num1 = platforms.children[changeSprite.sprite1];
+       let num2 = platforms.children[changeSprite.sprite2];
        let x1, x2, y1, y2;
-       x1 = changeSprite.sprite1.x;
-       x2 = changeSprite.sprite2.x;
-       y1 = changeSprite.sprite1.y;
-       y2 = changeSprite.sprite2.y;
-       if(Math.abs(x1 - x2) === 50 || Math.abs(y1 - y2) === 25){
+       x1 = num1.x;
+       x2 = num2.x;
+       y1 = num1.y;
+       y2 = num2.y;
+       if(Math.abs(x1 - x2) === 50 || Math.abs(y1 - y2) <= 25){
            if (x1 < x2) {
-               for (;changeSprite.sprite1.x < x2;) {
-                   changeSprite.sprite1.x += 1;
-                   changeSprite.sprite2.x -= 1;
-               }
+                platforms.children[changeSprite.sprite1] = num2;
+                platforms.children[changeSprite.sprite2] = num1;
+            //   for (;changeSprite.sprite1.x < x2;) {
+                   platforms.children[changeSprite.sprite1].x = x1;
+                   platforms.children[changeSprite.sprite2].x = x2;
+             //  }
            }
            else
                if (x1 > x2) {
-               for (;changeSprite.sprite1.x > x2;) {
-                   changeSprite.sprite1.x -= 1;
-                   changeSprite.sprite2.x += 1;
-               }
+                   platforms.children[changeSprite.sprite1] = num2;
+                   platforms.children[changeSprite.sprite2] = num1;
+             //  for (;changeSprite.sprite1.x > x2;) {
+                   platforms.children[changeSprite.sprite1].x = x1;
+                   platforms.children[changeSprite.sprite2].x = x2;
+             //  }
            }
            else
            if (y1 < y2) {
-               for (;changeSprite.sprite1.y < y2;) {
-                   changeSprite.sprite1.y += 1;
-                   changeSprite.sprite2.y -= 1;
-               }
+                platforms.children[changeSprite.sprite1] = num2;
+                platforms.children[changeSprite.sprite2] = num1;
+             //  for (;changeSprite.sprite1.y < y2;) {
+                    platforms.children[changeSprite.sprite1].y = y1;
+                    platforms.children[changeSprite.sprite2].y = y2;
+              // }
            }
            else
                if (y1 > y2) {
-               for (;changeSprite.sprite2.y > y1;) {
-                   changeSprite.sprite1.y -= 1;
-                   changeSprite.sprite2.y += 1;
-               }
+                   platforms.children[changeSprite.sprite1] = num2;
+                   platforms.children[changeSprite.sprite2] = num1;
+            //   for (;changeSprite.sprite2.y > y1;) {
+                   platforms.children[changeSprite.sprite1].y = y1;
+                   platforms.children[changeSprite.sprite2].y = y2;
+             //  }
            }
        }
        for (let key in changeSprite){
@@ -174,18 +225,22 @@ function ChangePlase() {
 }
 
 function addSprite(sprite) {
-    if (changeSprite.sprite1 === null) {
-        changeSprite.sprite1 = sprite
-    } else
-    if (changeSprite.sprite2 === null) {
-        changeSprite.sprite2 = sprite
+    for (let i = 0; i < platforms.children.length; i++){
+        if (platforms.children[i].x === sprite.x && platforms.children[i].y === sprite.y){
+            if (changeSprite.sprite1 === null) {
+                changeSprite.sprite1 = i
+            } else
+            if (changeSprite.sprite2 === null) {
+                changeSprite.sprite2 = i
+            }
+        }
     }
+
 
     console.log(changeSprite)
 }
 
 function AutoplayMusic() {
-    console.log(playBackground)
     if (playBackground) {
         if (!backgraundAudio.isPlaying) {
             backgraundAudio.play();
@@ -202,7 +257,7 @@ function StatePlayAudio(event) {
     console.log(playBackground)
 }
 
-function trueMass(mass) {
+function trueMassVertical(mass) {
    for (let i = 0; i < mass.length - 1; i++){
            if (mass[i] !== (mass[i + 1] - 1)){
                return false;
@@ -213,17 +268,22 @@ function trueMass(mass) {
 
 }
 
-//console.log(trueMass([1,2,3,4,5]));
-// console.log(3 === (4 - 1));
-// console.log(trueMass([1,2,3,4,5]));
-// // console.log(trueMass([23, 24, 25]));
-// // console.log(trueMass([1, 2, 3, 4,5, 6]));
 
+function trueMassGorizontal(mass) {
+    for (let i = 0; i < mass.length - 1; i++){
+        if (mass[i] !== (mass[i + 1] - 10)){
+            return false;
+        }
 
-function DellGem(gem) {
+    }
+    return true;
+
+}
+
+function DellGemVertical(gem) {
         for (let i = 0; i < platforms.children.length; i++) {
-            if (i + 1 !== platforms.children.length) {
-                if (platforms.children[i].key === gem && platforms.children[i + 1].key === gem) {
+            if ((i + 10) < platforms.children.length) {
+                if (platforms.children[i].key === gem && platforms.children[i + 10].key === gem) {
                     let massGem = [];
                     for (let j = i; j < Math.ceil(i / 10) * 10; j++) {
                         if (platforms.children[j].key === gem) {
@@ -233,7 +293,7 @@ function DellGem(gem) {
                         }
                     }
                     console.log(massGem);
-                    if (massGem.length >= 3 && trueMass(massGem)) {
+                    if (massGem.length >= 3 && trueMassVertical(massGem)) {
                         console.log('delete');
                         ScoreSumm(massGem.length);
                       //  killAudio.play();
@@ -256,12 +316,17 @@ function AddGem(i, j) {
     gem.width = 25;
     gem.height = 25;
     gem.inputEnabled = true;
+   game.physics.enable(gem, Phaser.Physics.ARCADE);
+   gem.body.collideWorldBounds = true;
+
+    gem.body.velocity.set(0, 10);
     gem.events.onInputDown.add(listener, this);
 }
 
 
 function FallGem(y) {
   //  console.log(Math.max.apply(null, y));
+    let min = Math.min.apply(null, y);
     let num = Math.max.apply(null, y);
     let zel, drob;
     if(y < 10){
@@ -272,9 +337,9 @@ function FallGem(y) {
         console.log(zel, drob)
     }
 
-    // for (let i = 0;  i < y.length; i++){
-    //
-    // }
+    for (let i = 0;  i < 10; i++){
+         AddGem(0, -75)
+    }
 
    // platforms.children
 }
@@ -284,17 +349,17 @@ function ScoreSumm(length) {
         case 3:
             score += 300;
             ScoreText.setText(score);
-           // select1.play();
+            // select1.play();
             break;
         case 4:
             score += 400;
             ScoreText.setText(score);
-          //  select2.play();
+            //  select2.play();
             break;
         case 5:
             score += 500;
             ScoreText.setText(score);
-           // select3.play();
+            // select3.play();
             break;
         case 6:
             score += 600;
@@ -304,7 +369,7 @@ function ScoreSumm(length) {
         case 7:
             score += 700;
             ScoreText.setText(score);
-          //  select5.play();
+            //  select5.play();
             break;
         case 8:
             score += 800;
@@ -317,6 +382,40 @@ function ScoreSumm(length) {
             //select7.play();
             break;
     }
-
 }
+
+    function DellGemGorizontal(gem) {
+         for (let i = 0; i <( platforms.children.length - 10) ; i++) {
+            if (i  <= platforms.children.length) {
+                if (platforms.children[i].key === gem && platforms.children[i + 10].key === gem) {
+                    let massGem = [];
+                    for (let j = i; j < platforms.children.length ; ) {
+                        if (platforms.children[j].key === gem) {
+                            massGem.push(j);
+                        } else {
+                            break;
+                        }
+                        j = j + 10;
+                    }
+                    console.log(massGem);
+                    console.log(trueMassGorizontal(massGem));
+                    if (massGem.length >= 3 && trueMassGorizontal(massGem)) {
+                        console.log('delete');
+                        ScoreSumm(massGem.length);
+                        //  killAudio.play();
+                        for (let del = 0; del < massGem.length; del++) {
+                            console.log(gem);
+                            let num = massGem[del];
+                            platforms.children[num - del].destroy();
+                        }
+                        FallGem(massGem);
+                    }
+                }
+            }
+         }
+
+     }
+
+
+
 
