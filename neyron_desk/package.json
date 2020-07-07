@@ -11,6 +11,6 @@
   "license": "ISC",
   "devDependencies": {
     "brain.js": "^1.6.0",
-    "electron": "^3.0.10"
+    "electron": "^7.2.4"
   }
 }
